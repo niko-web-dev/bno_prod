@@ -5,9 +5,9 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					<title>BNO</title>
-					<link href="/public/fonts/Eurostile-Bold.otf" />
-					<link href="/public/fonts/Eurostile-Regular.otf" />
+					<link href="../public/Eurostile-Bold.otf" />
+					<link href="../public/Eurostile-Regular.otf" />
+
 				</Head>
 
 				<body>

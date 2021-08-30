@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 import { useState } from 'react'
 import s from './products.module.scss'
 import CategoryFilter from '../../components/categoryFilter/index.js'
@@ -13,11 +14,10 @@ const Products = ({ products }) => {
 	)
 	const [currentPage, setCurrentPage] = useState(1)
 	const router = useRouter()
-	console.log(products)
 	let defaultParams
 	if (router.query) {
 		for (let item in router.query) {
-			if (item != 'search') {
+			if (item !== 'search') {
 				defaultParams = {
 					type: item,
 					slug: router.query[item],
@@ -110,7 +110,11 @@ const Products = ({ products }) => {
 	}
 
 	return (
-		<div className="container">
+		<>
+			<Head>
+				<title>Каталог</title>
+			</Head>
+			<div className="container">
 			<div className={s.gallery}>
 				<button
 					className={[
@@ -262,6 +266,7 @@ const Products = ({ products }) => {
 				/>
 			</div>
 		</div>
+		</>
 	)
 }
 

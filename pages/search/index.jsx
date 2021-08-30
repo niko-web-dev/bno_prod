@@ -17,7 +17,7 @@ const Products  = ({ products }) => {
 	let defaultParams
 	if (router.query) {
 		for (let item in router.query) {
-			if (item != 'search') {
+			if (item !== 'search') {
 				defaultParams = {
 					type: item,
 					slug: router.query[item],

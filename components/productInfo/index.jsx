@@ -49,8 +49,8 @@ const ProductInfo = ({ product }) => {
 		if (localStorage.getItem('product') !== null) {
 			let products = JSON.parse(localStorage.getItem('product'))
 			products.push(myProduct)
-			localStorage.setItem('product', JSON.stringify(products))
 			setCardLs(localStorage.setItem('product', JSON.stringify(products)))
+			localStorage.setItem('product', JSON.stringify(products))
 		} else {
 			let products = []
 			products.push(myProduct)

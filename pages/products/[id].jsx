@@ -4,10 +4,14 @@ import Index from '../../components/Tags'
 import s from './product-page.module.scss'
 import ProductInfo from '../../components/productInfo'
 import CardSlider from '../../components/cardSlider/cardSlider'
+import Head from "next/head"
 
 const ProductPage= ({ product }) => {
 	return (
-		<div>
+		<>
+			<Head>
+				<title>{product.title}</title>
+			</Head>
 			<Header />
 
 			<div className={s.card__wrap}>
@@ -26,7 +30,7 @@ const ProductPage= ({ product }) => {
 					<ProductInfo product={product} />
 				</div>
 			</div>
-		</div>
+		</>
 	)
 }
 

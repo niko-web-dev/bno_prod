@@ -3,13 +3,14 @@ import CardLeft from '../components/cardLeft'
 import CardForm from '../components/cardForm'
 import CardNull from '../components/cardNull'
 import CardConfirm from '../components/cardConfirm'
+import Head from "next/head";
 
 const Card = ({ products }) => {
 	const [status, setStatus] = useState(0)
-
+console.log("products",products)
 	useEffect(() => {
 		const data = JSON.parse(localStorage.getItem('product'))
-		if (data != null && data.length > 0) {
+		if (data !== null && data.length > 0) {
 			setStatus(1)
 		}
 	}, [])
@@ -28,13 +29,16 @@ const Card = ({ products }) => {
 	}
 	return (
 		<>
-			<main className={['card', status != 1 ? 'card-state-2' : null].join(' ')}>
+			<Head>
+				<title>Корзина</title>
+			</Head>
+			<main className={['card', status !== 1 ? 'card-state-2' : null].join(' ')}>
 				<div className="container">
 					<div
 						style={{ display: 'flex' }}
 						className={[
 							'card__wrapper',
-							status != 1 ? 'card-center' : null,
+							status !== 1 ? 'card-center' : null,
 						].join(' ')}
 					>
 						{status === 1 ? (

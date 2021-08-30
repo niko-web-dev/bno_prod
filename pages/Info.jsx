@@ -1,9 +1,13 @@
 import s from '../styles/info.module.scss'
 import Image from 'next/image'
+import Head from "next/head"
 
 const Info = () => {
 	return (
 		<>
+			<Head>
+				<title>About</title>
+			</Head>
 			<main>
 				<div className="container">
 					<div className={s.top__block}>

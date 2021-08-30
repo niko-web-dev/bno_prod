@@ -11,7 +11,7 @@ const CardForm  = ({ updateStatus }) => {
 		e.preventDefault()
 
 		try {
-			if (name != '' && phone != '' && email != '') {
+			if (name !== '' && phone !== '' && email !== '') {
 				let orderProducts = JSON.parse(localStorage.getItem('product'))
 				let cardProducts = {}
 				let totalCost = 0

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { MenuProvider } from '../context/contextMenu'
 import Menu from '../components/menu'
+import Head from 'next/head'
 import 'swiper/swiper.scss'
 
 import { animation } from '../animation/animation'
@@ -12,6 +13,10 @@ import { CardProvider } from '../context/contextCard'
 
 function MyApp({ Component, pageProps, router }) {
 	return (
+		<>
+			<Head>
+				<title>Brand new order</title>
+			</Head>
 		<motion.div
 			key={router.route}
 			initial="pageInitial"
@@ -27,6 +32,7 @@ function MyApp({ Component, pageProps, router }) {
 				</MenuProvider>
 			</CardProvider>
 		</motion.div>
+	</>
 	)
 }
 
