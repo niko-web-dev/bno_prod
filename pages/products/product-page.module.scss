@@ -1,0 +1,281 @@
+.card {
+	display: flex;
+	&__wrap {
+		display: flex;
+		width: 100%;
+		background: linear-gradient(to right, white 55%, #f1f1f1 45%);
+		@media (max-width: 850px) {
+			background: #f1f1f1;
+		}
+		&_container {
+			@media (max-width: 850px) {
+				flex-direction: column;
+			}
+		}
+	}
+	&__content {
+		margin-top: 220px;
+		flex: 1 auto;
+		width: 60%;
+		@media (max-width: 850px) {
+			width: 100%;
+		}
+	}
+	&__info {
+		position: relative;
+		overflow: hidden;
+		padding-bottom: 50px;
+		padding-top: 220px;
+		flex: auto 1;
+		width: 45%;
+		flex-direction: column;
+		@media (max-width: 850px) {
+			width: 100%;
+			padding-top: 40px;
+		}
+	}
+	&__save {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: #f1f1f1;
+		z-index: 1000;
+		display: flex;
+		justify-content: center;
+		padding: 50px;
+		flex-direction: column;
+		transform: translateX(100%);
+		transition: transform 0.5s ease;
+		&Active {
+			transform: translateX(0%);
+		}
+		&_close {
+			top: 100px;
+			right: 75px;
+			width: 50px;
+			height: 50px;
+			display: block;
+			position: absolute;
+			background: none;
+			border: none;
+			cursor: pointer;
+		}
+		&_block {
+			margin-bottom: 40px;
+
+			&List {
+				padding: 0;
+				margin: 0;
+				&Mat {
+					padding: 0;
+					margin: 0;
+					display: flex;
+					flex-wrap: wrap;
+					li {
+						flex: 0 0 30%;
+						display: flex;
+						flex-direction: column;
+						padding: 5px;
+						margin: 0;
+						margin-bottom: 35px;
+						p {
+							font-family: Eurostile;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 12px;
+							line-height: 14px;
+							letter-spacing: 0.15em;
+						}
+					}
+				}
+				li {
+					margin-bottom: 14px;
+					display: flex;
+					flex-direction: column;
+				}
+				h2 {
+					font-family: Eurostile;
+					font-style: normal;
+					font-weight: bold;
+					font-size: 14px;
+					line-height: 17px;
+					letter-spacing: 0.15em;
+					color: #979797;
+					margin: 0;
+					padding: 0;
+				}
+				p {
+					font-family: Eurostile;
+					font-style: normal;
+					font-size: 14px;
+					line-height: 17px;
+					letter-spacing: 0.15em;
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+	&__title {
+		max-width: 395px;
+		width: 100%;
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 29px;
+		letter-spacing: 0.15em;
+		margin-bottom: 30px;
+	}
+	&__description {
+		max-width: 480px;
+		width: 100%;
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 21px;
+		letter-spacing: 0.15em;
+		margin-bottom: 50px;
+	}
+	&__popupslink {
+		position: relative;
+		margin-bottom: 60px;
+		display: flex;
+		flex-direction: column;
+		button {
+			display: inline-block;
+			cursor: pointer;
+			width: fit-content;
+			background: none;
+			border: none;
+			padding: 0;
+			margin: 0;
+			font-family: Eurostile;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 17px;
+			letter-spacing: 0.15em;
+			color: #979797;
+			border-bottom: 1px solid #979797;
+			&:not(:last-child) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	&__colorTitle {
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.15em;
+		margin-bottom: 18px;
+	}
+	&__colors {
+		display: flex;
+		align-items: center;
+		margin-bottom: 41px;
+		&Link {
+			width: 45px;
+			height: 5px;
+			position: relative;
+			cursor: pointer;
+			z-index: 1000;
+			&Active {
+				//pointer-events: none;
+				&:after {
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: -9px;
+					width: 100%;
+					height: 1px;
+					background: #000;
+				}
+			}
+		}
+	}
+	&__sizesTitle {
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.15em;
+		margin-bottom: 25px;
+	}
+	&__sizes {
+		display: flex;
+		margin-bottom: 80px;
+		&Label {
+			font-family: Eurostile;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 22px;
+			text-align: center;
+			letter-spacing: 0.15em;
+			width: fit-content;
+			padding: 0 10px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 30px;
+			&:not(:last-child) {
+				margin-right: 30px;
+			}
+			&Active {
+				font-weight: bold;
+				font-size: 24px;
+				line-height: 29px;
+				border-bottom: 1px solid black;
+			}
+		}
+		&Radio {
+			margin: 0;
+			padding: 0;
+			width: 0;
+			height: 0;
+		}
+	}
+	&__price {
+		max-width: 400px;
+		width: 100%;
+		text-align: center;
+		font-weight: normal;
+		font-size: 36px;
+		line-height: 43px;
+		letter-spacing: 0.15em;
+		margin-bottom: 4px;
+	}
+	&__button {
+		background-color: transparent;
+		cursor: pointer;
+		padding: 15px;
+		max-width: 400px;
+		width: 100%;
+		text-align: center;
+		color: #000000;
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 14px;
+		letter-spacing: 0.15em;
+		border: 1px solid #000000;
+		transition: all 0.5s ease;
+		&:hover {
+			background-color: #000;
+			color: #ffffff;
+		}
+	}
+}

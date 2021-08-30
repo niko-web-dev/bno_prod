@@ -1,0 +1,48 @@
+.cardNull {
+	display: flex;
+	flex-direction: column;
+	max-width: 577px;
+	width: 100%;
+	&__title {
+		margin-bottom: 10px;
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 36px;
+		line-height: 43px;
+		letter-spacing: 0.15em;
+	}
+	&__text {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 30px;
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 29px;
+		letter-spacing: 0.15em;
+	}
+	&__button {
+		background-color: transparent;
+		cursor: pointer;
+		padding: 15px;
+		width: 100%;
+		max-width: 510px;
+		text-align: center;
+		color: #000000;
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 14px;
+		letter-spacing: 0.15em;
+		border: 1px solid #000000;
+		transition: all 0.5s ease;
+
+		&:hover {
+			background-color: #000;
+			color: #ffffff;
+		}
+	}
+}

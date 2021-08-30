@@ -1,0 +1,135 @@
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	flex: 1 1;
+
+	&__wrap {
+		width: 100%;
+		padding: 80px 0 50px;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		background: #fff;
+		position: absolute;
+		z-index: 9000;
+		overflow: hidden;
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		min-height: 680px;
+	}
+
+	&__info {
+		width: 210px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&Active {
+			margin-left: auto;
+		}
+		a {
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 17px;
+			letter-spacing: 0.15em;
+		}
+	}
+}
+
+.header__menu {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 170px;
+
+	&__close {
+		width: 64px;
+		height: 36px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		cursor: pointer;
+		z-index: 10;
+	}
+
+	&__input {
+		display: flex;
+		align-items: center;
+	}
+
+	&__seacrh {
+		cursor: pointer;
+		position: relative;
+		input {
+			display: block;
+			position: absolute;
+			top: -3px;
+			right: -5px;
+			z-index: -1;
+			height: 100%;
+			opacity: 0;
+		}
+		input:focus {
+			opacity: 1;
+		}
+	}
+	&__card {
+		margin-left: 35px;
+		display: flex;
+		width: 30px;
+		height: 30px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__tabs {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: -40px;
+		@media (max-width: 661px) {
+			position: absolute;
+			max-width: 380px;
+			width: 90%;
+			margin: 0 auto;
+			padding-top: 20px;
+			z-index: 0;
+		}
+		h2 {
+			margin-bottom: 45px;
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 22px;
+			letter-spacing: 0.15em;
+			@media (max-width: 661px) {
+				margin-bottom: 60px;
+			}
+		}
+	}
+	&__tab {
+		width: 140px;
+		padding-bottom: 20px;
+		border: none;
+		background: none;
+		border-bottom: 1px solid #dadada;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 14px;
+		text-align: center;
+		letter-spacing: 0.15em;
+		transition: all 0.5s ease;
+		cursor: pointer;
+		&Active {
+			font-weight: bold;
+			border-bottom: 1px solid #000000;
+		}
+	}
+}

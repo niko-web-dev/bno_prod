@@ -1,0 +1,118 @@
+.cardProduct {
+	display: flex;
+	flex-direction: column;
+	max-width: 735px;
+	width: 100%;
+	margin-right: 5vw;
+
+	&__total {
+		display: flex;
+		padding: 57px 132px 56px 96px;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		@media screen and (max-width: 651px) {
+			padding: 57px 0;
+		}
+		p {
+			margin: 0;
+			padding: 0;
+			font-family: Eurostile;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 22px;
+			letter-spacing: 0.15em;
+		}
+		h3 {
+			margin: 0;
+			padding: 0;
+			font-family: Eurostile;
+			font-weight: normal;
+			font-size: 36px;
+			line-height: 43px;
+			letter-spacing: 0.15em;
+		}
+	}
+	&__item {
+		padding: 25px 50px 15px 15px;
+		width: 100%;
+		display: flex;
+		border-bottom: 1px solid #f1f1f1;
+		@media screen and (max-width: 651px) {
+			padding: 25px 5px;
+		}
+		@media screen and (max-width: 421px) {
+			flex-direction: column;
+		}
+	}
+	&__image {
+		object-fit: cover !important;
+		max-width: 245px !important;
+		max-height: 300px !important;
+		width: 100% !important;
+		height: auto !important;
+		@media screen and (max-width: 421px) {
+			object-fit: contain !important;
+		}
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		margin-left: 65px;
+		max-width: 350px;
+		width: 100%;
+		position: relative;
+		@media screen and (max-width: 421px) {
+			margin: 0;
+		}
+	}
+	&__title {
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 22px;
+		letter-spacing: 0.15em;
+		margin-bottom: 14px;
+	}
+	&__article {
+		font-family: Eurostile;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 17px;
+		letter-spacing: 0.15em;
+		margin-bottom: 15px;
+		span {
+			font-weight: normal;
+		}
+	}
+	&__size {
+		font-family: Eurostile;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 22px;
+		letter-spacing: 0.15em;
+		margin-bottom: 80px;
+	}
+	&__price {
+		width: 100%;
+		text-align: end;
+		font-family: Eurostile;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 22px;
+		letter-spacing: 0.15em;
+	}
+	&__delete {
+		width: 22px;
+		height: 22px;
+		position: absolute;
+		right: 0;
+		top: 150px;
+		border: none;
+		cursor: pointer;
+		background: none;
+	}
+}

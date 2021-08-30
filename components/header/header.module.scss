@@ -1,0 +1,19 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 60px 0;
+	background: transparent;
+	z-index: 50;
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+	& div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
