@@ -7,7 +7,6 @@ import Head from "next/head";
 
 const Card = ({ products }) => {
 	const [status, setStatus] = useState(0)
-console.log("products",products)
 	useEffect(() => {
 		const data = JSON.parse(localStorage.getItem('product'))
 		if (data !== null && data.length > 0) {

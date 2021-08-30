@@ -3,12 +3,14 @@ import s from '../../pages/products/product-page.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ContextCard } from '../../context/contextCard'
+import Popup from '../popup/index'
 
 const ProductInfo = ({ product }) => {
 	const [colors, setColors] = useState([])
 	const [size, setSize] = useState('')
 	const [matherialPopup, setMatherialPopup] = useState(false)
 	const [cardLs, setCardLs] = useContext(ContextCard)
+	const [activePopup, setPopUp] = useState(false)
 
 	useEffect(() => {
 		let allColors = []
@@ -64,8 +66,20 @@ const ProductInfo = ({ product }) => {
 			return carts?.some((prod) => prod.id === id)
 		}
 	}
+
+	const popUpNow = () => {
+		setPopUp(true);
+	}
+	const hidePopUp = () => {
+		setTimeout(() => {
+			setPopUp(false)
+		}, 5000)
+	}
+
 	return (
 		<form className={s.card__info}>
+			<Popup activePopup={activePopup} hidePopUp={hidePopUp} cardLs={cardLs}/>
+
 			<div
 				className={[
 					s.card__save,
@@ -211,7 +225,10 @@ const ProductInfo = ({ product }) => {
 					</a>
 				</Link>
 			) : (
-				<button className={s.card__button} onClick={(e) => addToCard(e)}>
+				<button className={s.card__button} onClick={(e) => {
+					addToCard(e)
+					popUpNow()
+				}}>
 					КУПИТЬ
 				</button>
 			)}

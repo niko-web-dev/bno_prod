@@ -1,0 +1,121 @@
+.popup {
+  width: 540px;
+  //height: 232px;
+  border-radius: 20px;
+  transition: 1s;
+  position: absolute;
+  top: -1000px;
+  left: 0;
+  background: #fff;
+  z-index: 99;
+}
+.active {
+  top: 100px;
+}
+.productItem {
+  width: 100%;
+  padding: 10px 0;
+  position: relative;
+}
+.productItem__delete {
+  position: absolute;
+  right: 0;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+.productItem:not(:last-child) {
+  border-bottom: 1px solid #DEDDDD;
+}
+.wrapImg {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productItem {
+  display: flex;
+}
+.productItem img {
+  width: 98px;
+  height: 122px;
+}
+.wrapText {
+  width: 70%;
+  color: #000000;
+  padding-right: 22px;
+}
+.wrapText p {
+  margin: 0 0 12px;
+}
+.wrapText__brand {
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.15em;
+}
+.bottomBtn {
+  text-align: center;
+}
+.wrapText__title {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px!important;
+}
+.wrapText__title span {
+  font-weight: 400;
+  padding-right: 10px;
+}
+.wrapText__size {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.15em;
+}
+.wrapText__size span {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+}
+.innerText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.allPrice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 25px 25px 50px;
+}
+.allPrice p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.15em;
+}
+p.allPrice__value {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.15em;
+}
+.popup__btn {
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  background: #979797;
+  padding: 12px 0;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: .2s
+}
+.popup__btn:hover {
+  background: #000000;
+  cursor: pointer;
+}
