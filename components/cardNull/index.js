@@ -11,7 +11,7 @@ const CardNull = ({}) => {
 					<br />
 					Перейдите в каталог для выбора товаров.
 				</p>
-				<Link href={`/products/`}>
+				<Link href={`/products/`} scroll={false}>
 					<a className={style.cardNull__button}>КАТАЛОГ</a>
 				</Link>
 			</main>

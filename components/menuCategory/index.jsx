@@ -102,6 +102,7 @@ const MenuCategory = (brand) => {
 									return (
 										<li key={item.id} className={s.wrapper__item}>
 											<Link
+												scroll={false}
 												href={{
 													pathname: '/products',
 													query: { type: item.slug },

@@ -17,21 +17,28 @@ function MyApp({ Component, pageProps, router }) {
 			<Head>
 				<title>Brand new order</title>
 			</Head>
-		<motion.div
-			key={router.route}
-			initial="pageInitial"
-			animate="pageAnimate"
-			variants={animation.page}
-		>
+		
 			<CardProvider>
 				<MenuProvider>
 					<Menu />
 					<Header />
+					<motion.div
+						initial="hidden" // Set the initial state to variants.hidden
+						animate="enter" // Animated state to variants.enter
+						exit="exit" // Exit state (used later) to variants.exit
+						transition={{ type: 'linear' }} 
+						onExitComplete={() => window.scrollTo(0, 0)}
+						key={router.route}
+						// initial="pageInitial"
+						// animate="pageAnimate"
+						variants={animation.page}
+		>
 					<Component {...pageProps} />
+					</motion.div>
 					<Footer />
 				</MenuProvider>
 			</CardProvider>
-		</motion.div>
+		
 	</>
 	)
 }

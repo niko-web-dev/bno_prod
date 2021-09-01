@@ -8,7 +8,7 @@ const CardIcon = () => {
 
 	return (
 		<div className="header__card" style={{ marginLeft: '35px' }}>
-			<Link href="/Card" shallow={true}>
+			<Link href="/Card" shallow={true} scroll={false}>
 				<a className={s.header__card}>
 					<svg
 						width="19"

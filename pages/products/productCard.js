@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const ProductCard = ({ product }) => {
 	return (
-		<Link href={`/products/${product?.id}`}>
+		<Link href={`/products/${product?.id}`} scroll={false}>
 			<a className={s.gallery__item}>
 				<h2 className={s.gallery__itemTitle}>
 					{product?.code} <b>{product?.title}</b>

@@ -1,14 +1,18 @@
 export const animation = {
 	page: {
-		pageInitial: {
-			opacity: 0,
-		},
-		pageAnimate: {
-			opacity: 1,
-			// transition: {
-			// 	delay: 0.1,
-			// },
-		},
+		hidden: { opacity: 0, x: -200, y: 0 },
+		enter: { opacity: 1, x: 0, y: 0 },
+		exit: { opacity: 0, x: 0, y: -100 },
+		// pageInitial: {
+		// 	opacity: 0,
+		// 	transition: {
+		// 		delay: 0.1,
+		// 	},
+		// },
+		// pageAnimate: {
+		// 	opacity: 1,
+			
+		// },
 	},
 
 	opacityAnim: {

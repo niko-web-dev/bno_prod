@@ -25,7 +25,6 @@ const Products = ({ products }) => {
 			}
 		}
 	}
-
 	products.map((item) => {
 		if (!item.brands[0]) {
 			item.brands[0] = {
@@ -198,7 +197,7 @@ const Products = ({ products }) => {
 							)
 							?.map((product, index) => {
 								return (
-									<Link href={`/products/${product.id}`} key={index}>
+									<Link href={`/products/${product.id}`} key={index} scroll={false}>
 										<a className={s.gallery__item}>
 											<h2 className={s.gallery__itemTitle}>
 												{product.code} <b>{product.title}</b>

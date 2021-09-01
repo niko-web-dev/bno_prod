@@ -138,10 +138,10 @@ const Menu = () => {
 									tab === 'categories' ? s.menu__infoActive : null,
 								].join(' ')}
 							>
-								<Link href="/Info" shallow={true}>
+								<Link href="/Info" shallow={true} scroll={false}>
 									<a>О нас</a>
 								</Link>
-								<Link href="/delivery" shallow={true}>
+								<Link href="/delivery" shallow={true} scroll={false}>
 									<a>Доставка</a>
 								</Link>
 							</div>

@@ -27,6 +27,7 @@ const MenuBrands = () => {
 							href={{ pathname: '/products', query: { brand: item.slug } }}
 							key={item.id}
 							shallow={true}
+							scroll={false}
 						>
 							<a className={s.wrapper__item}>
 								<Image

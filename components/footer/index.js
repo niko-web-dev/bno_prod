@@ -76,13 +76,13 @@ const Footer = () => {
 						</button>
 					</div>
 					<div className={s.footer__social}>
-						<Link href={`/telegram`}>
+						<Link href={`/telegram`} scroll={false}>
 							<a className={s.footer__socialLink}>telegram</a>
 						</Link>
-						<Link href={`/instagram`}>
+						<Link href={`/instagram`} scroll={false}>
 							<a className={s.footer__socialLink}>instagram</a>
 						</Link>
-						<Link href={`/share`}>
+						<Link href={`/share`} scroll={false}>
 							<a className={s.footer__socialLink}>share</a>
 						</Link>
 					</div>

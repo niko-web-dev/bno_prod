@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Logo= ({ color }) => {
 	return (
 		<>
-			<Link href="/" shallow={true}>
+			<Link href="/" shallow={true} scroll={false}>
 				<a>
 					<Image
 						className="header__logo"
