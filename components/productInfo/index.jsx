@@ -177,7 +177,7 @@ const ProductInfo = ({ product }) => {
 				{colors.length > 1
 					? colors.map(({ id, color }) => {
 							return (
-								<Link href={`/products/${id}`} key={id}>
+								<Link href={`/products/${id}`} key={id} scroll={false}>
 									<a
 										className={[
 											s.card__colorsLink,
@@ -219,7 +219,7 @@ const ProductInfo = ({ product }) => {
 				<b>{product.price.toLocaleString()}</b> ₽
 			</h2>
 			{chechProductInCard(product.id) ? (
-				<Link href={'/Card'}>
+				<Link href={'/Card'} scroll={false}>
 					<a className={s.card__button} style={{ display: 'block' }}>
 						КОРЗИНА
 					</a>
