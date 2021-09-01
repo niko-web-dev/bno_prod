@@ -41,7 +41,10 @@ const SearchIcon = () => {
 				required={true}
 				type="text"
 			/>
-			<button type="submit" onClick={(e) => searchSubmit(e)}>
+			<button type="submit" onClick={(e) => {
+				console.log("submit", e)
+				// searchSubmit(e)
+			}}>
 				{' '}
 				go{' '}
 			</button>

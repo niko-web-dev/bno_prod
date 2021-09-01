@@ -1,34 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+1) Доделать линки на твоары по цветам(не показыввает цвет активной линки, там айдефайнд прихоит, так как ты берешь цвет из связанных линков,
+а нужно выводить цвет линки данного товара)
 
-## Getting Started
+2) Адаптация под мобилки(
+1. главный экран(слайдер)
+2. страница товара, нужно сделать по макету
+3. Каталог как то странно работате на мобилке, нужно прописать жестко, когда в колонку становиться
+4. На мобилке на странице товара нужно сделать белый фон, а то фотки все с белой плашкой, см макет
+)
 
-First, run the development server:
+3) Не работает филтрация по цветам + цвета дубрируются
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+4) Анимация (
+1. слайдер на главной при нажатии ( https://www.figma.com/proto/xV8DfSZVH2bMpFVXgn8IML/act-one?page-id=0%3A1&node-id=1%3A455&viewport=241%2C48%2C0.13&scaling=min-zoom&starting-point-node-id=1%3A455&show-proto-sidebar=1 )
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. анимация слайдера на странице товара ( https://www.figma.com/proto/xV8DfSZVH2bMpFVXgn8IML/act-one?page-id=0%3A1&node-id=465%3A695&viewport=241%2C48%2C0.13&scaling=min-zoom&starting-point-node-id=465%3A2233&show-proto-sidebar=1  )
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. меню на главной при открытии ( https://www.figma.com/proto/TxUO21oRIOgdJVIZXQi4WB/Untitled?page-id=0%3A1&node-id=8%3A212&starting-point-node-id=8%3A364 )
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+5) Поиск (короче, там проблемы, поиск который реализовал бек мы не можем использовать, так как он работет торльок по названию)
+что делать с этим, я хз,есть варик сделать фильрацию на фронте, но я не знаю каак ее соеденить с твоими филтрами
+Короче я сделаю поиск на фронте, а завтра посмотрим<е соеденить с твоими фильтрами
+можно сделать конечно при поиске кидать на нову страницу поиска, Но логичнее было бы сделать при нажджатии на поиск редикерт на каталог
+короче нужно подумать
 
-## Learn More
+6) и еще моент с попапом, мнен джун его сделал, но он не смог реализовать удаление товара по крестику в попапе, тоже хорошо бы сделать
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+7) заменить шрифты на WOFF2

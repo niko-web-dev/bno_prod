@@ -1,23 +1,20 @@
 import Link from 'next/link'
 import s from './popup.module.scss'
 
-
 const Popup = ({activePopup, hidePopUp, cardLs}) => {
-	// let products = JSON.parse(localStorage.getItem('product'))
 
-	const products = cardLs
 	return (
 
 			<div className={s.popup + ' ' + `${activePopup ? `${s.active}` : ''}`} >
-				{ products &&
-					products?.map(({image, id, code, title, size, price, ...brands}, index) => {
+				{ cardLs &&
+				cardLs?.map(({image, id, code, title, size, price, ...brands}, index) => {
 							return (<div key={id} className={s.productItem}>
 
 								<div className={s.wrapImg}>
 									<img src={image} alt=""/>
 								</div>
 								<div className={s.wrapText}>
-									<p className={s.wrapText__brand}>STONE ISLAND</p>
+									<p className={s.wrapText__brand}>{brands.name}</p>
 									<p className={s.wrapText__title}><span>{ code }</span>{ title }</p>
 									<div className={s.innerText}>
 										<p className={s.wrapText__size}>Размер: <span> { size } </span></p>
@@ -38,8 +35,8 @@ const Popup = ({activePopup, hidePopUp, cardLs}) => {
 				}
 				<div className={s.allPrice}>
 					<p>Сумма заказа</p>
-					<p className={s.allPrice__value}>{products?.length > 0
-						? products.reduce((sum, n) => sum + +n.price, 0).toLocaleString()
+					<p className={s.allPrice__value}>{cardLs?.length > 0
+						? cardLs.reduce((sum, n) => sum + +n.price, 0).toLocaleString()
 						: null} ₽</p>
 				</div>
 				<div className={s.popup__btn}><Link href={'/Card'}><a>Оформить заказ</a></Link></div>
