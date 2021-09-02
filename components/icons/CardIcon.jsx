@@ -24,7 +24,7 @@ const CardIcon = () => {
 							fill="#231F20"
 						/>
 					</svg>
-					<span className="card__count">{cardLs?.length}</span>
+					<span className={s.card__count}>{cardLs?.length}</span>
 				</a>
 			</Link>
 

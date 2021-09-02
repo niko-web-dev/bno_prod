@@ -38,6 +38,12 @@
 			&Wrapper {
 				grid-column: 1 / 4;
 				width: 100%;
+				@media (max-width: 661px) {
+					grid-column: 1 / 3;
+				}
+				@media (max-width: 421px) {
+					grid-column: 1 / 2;
+				}
 			}
 		}
 		&Active &Text {

@@ -42,7 +42,7 @@ const CardSlider = ({ images }) => {
 				</button>
 			</div>
 			<Swiper
-				direction={'vertical'}
+				direction={'horizontal'}
 				pagination={pagination}
 				loop={false}
 				slidesPerView={1}

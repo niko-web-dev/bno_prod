@@ -19,6 +19,9 @@ const ProductPage= ({ product }) => {
 					className={['container', s.card__wrap_container].join(' ')}
 					style={{ display: 'flex' }}
 				>
+					<h1 className={s.card__titleMobile}>
+				{product.code} <b>{product.title}</b>
+			</h1>
 					<div className={s.card__content}>
 						<Index
 							brand={product.brands[0].name}

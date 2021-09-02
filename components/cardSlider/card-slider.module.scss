@@ -4,8 +4,11 @@
 	overflow: hidden;
 	display: flex;
 	@media (max-width: 850px) {
-		width: 80vw;
+		width: 100%;
 		height: 82vw;
+		flex-direction: column;
+		padding: 10px 0;
+		margin-bottom: 10px;
 	}
 	&__prev {
 		width: 50px;
@@ -15,6 +18,9 @@
 		margin-bottom: 20px;
 		cursor: pointer;
 		z-index: 5;
+		@media (max-width: 850px) {
+			display: none;
+		}
 	}
 	&__next {
 		width: 50px;
@@ -25,6 +31,9 @@
 		cursor: pointer;
 		z-index: 5;
 		transform: rotate(180deg);
+		@media (max-width: 850px) {
+			display: none;
+		}
 	}
 	&Pag {
 		height: 100%;
@@ -34,8 +43,18 @@
 		align-items: center;
 		justify-content: center;
 		margin: 0 25px;
+		@media (max-width: 850px) {
+			height: 1px;
+			width: 100%;
+			flex-direction: row;
+		}
 		&Line {
 			height: auto;
+			@media (max-width: 850px) {
+				width: 100%;
+				height: 1px;
+				display: flex;
+			}
 		}
 	}
 	&Bullet {
@@ -43,6 +62,11 @@
 		height: 9vw;
 		background: #dadada;
 		display: block;
+		@media (max-width: 850px) {
+			display: flex;
+			flex: 1 1 50%;
+			height: 100%;
+		}
 		&Active {
 			background: #000;
 		}
