@@ -21,8 +21,8 @@ const ProductPage= ({ product }) => {
 				>
 					<div className={s.card__content}>
 						<Index
-							brand={'STONE ISLAND'}
-							types={['Верхняя одежда', 'Куртки']}
+							brand={product.brands[0].name}
+							types={[product.categories[0].name, product.categories[product.categories.length - 1].name]}
 						/>
 						<CardSlider images={product.gallery} />
 					</div>
