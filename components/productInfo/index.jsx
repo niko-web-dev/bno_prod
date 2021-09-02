@@ -17,7 +17,7 @@ const ProductInfo = ({ product }) => {
 		{
 			let activeColor = {
 				id: product.id,
-				color: product.color,
+				color: product.colors_variant[0],
 			}
 			allColors.push(activeColor)
 			for (let item in product.related_posts) {
