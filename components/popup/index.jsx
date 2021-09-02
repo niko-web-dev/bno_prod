@@ -1,28 +1,40 @@
 import Link from 'next/link'
 import s from './popup.module.scss'
+import {useContext} from "react";
+import {ContextCard} from "../../context/contextCard";
 
-const Popup = ({activePopup, hidePopUp, cardLs}) => {
+const Popup = ({activePopup, hidePopUp}) => {
+	const [products, setProducts] = useContext(ContextCard)
+
+	function deleteItem(item){
+		event.preventDefault()
+		products.splice(item, 1);
+		localStorage.setItem('product', JSON.stringify(products))
+		let newProducts = JSON.parse(localStorage.getItem('product'))
+		setProducts(newProducts)
+	}
 
 	return (
 
 			<div className={s.popup + ' ' + `${activePopup ? `${s.active}` : ''}`} >
-				{ cardLs &&
-				cardLs?.map(({image, id, code, title, size, price, ...brands}, index) => {
-							return (<div key={id} className={s.productItem}>
+				{ products &&
+				products?.map((item, index) => {
+							return (<div key={item.id} className={s.productItem}>
 
 								<div className={s.wrapImg}>
-									<img src={image} alt=""/>
+									<img src={item.image} alt=""/>
 								</div>
 								<div className={s.wrapText}>
-									<p className={s.wrapText__brand}>{brands.name}</p>
-									<p className={s.wrapText__title}><span>{ code }</span>{ title }</p>
+									<p className={s.wrapText__brand}>{item?.brands?.name}</p>
+									<p className={s.wrapText__title}><span>{ item.code }</span>{ item.title }</p>
 									<div className={s.innerText}>
-										<p className={s.wrapText__size}>Размер: <span> { size } </span></p>
-										<p className={s.wrapText__price}>{ price } ₽</p>
+										<p className={s.wrapText__size}>Размер: <span> { item.size } </span></p>
+										<p className={s.wrapText__price}>{ item.price } ₽</p>
 									</div>
 								</div>
 								<button
 									className={s.productItem__delete}
+									onClick={() => deleteItem(index)}
 								>
 									<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
 										<path  clipRule="evenodd" d="M9.05526 0.504185L0.503454 9.05599C0.226236 9.33321 0.108848 9.6683 0.241913 9.80136L0.267914 9.82736C0.400979 9.96043 0.736062 9.84304 1.01328 9.56582L9.56509 1.01401C9.84231 0.736794 9.96023 0.40118 9.82716 0.268115L9.80116 0.242114C9.66809 0.109049 9.33248 0.226967 9.05526 0.504185Z" fill="#979797"/>
@@ -35,8 +47,8 @@ const Popup = ({activePopup, hidePopUp, cardLs}) => {
 				}
 				<div className={s.allPrice}>
 					<p>Сумма заказа</p>
-					<p className={s.allPrice__value}>{cardLs?.length > 0
-						? cardLs.reduce((sum, n) => sum + +n.price, 0).toLocaleString()
+					<p className={s.allPrice__value}>{products?.length > 0
+						? products.reduce((sum, n) => sum + +n.price, 0).toLocaleString()
 						: null} ₽</p>
 				</div>
 				<div className={s.popup__btn}><Link href={'/Card'}><a>Оформить заказ</a></Link></div>
