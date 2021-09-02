@@ -71,7 +71,7 @@ const Products = ({ products }) => {
 		if (filter.color.length > 0) {
 			for (let col of filter.color) {
 				products.map((item) => {
-					if (item?.color?.label === col) {
+					if (item?.colors_variant[0]?.value === col) {
 						newItemsColor.push(item)
 					}
 				})

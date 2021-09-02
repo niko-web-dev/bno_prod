@@ -34,8 +34,8 @@ const CategoryFilter = ({
 
 	products?.map((product) => {
 		color.push({
-			name: product?.colors_variant ? product?.colors_variant : 'Все цвета',
-			slug: product?.colors_variant ? product?.colors_variant : 'Все цвета',
+			name: product?.colors_variant ? product?.colors_variant[0].label : 'Все цвета',
+			slug: product?.colors_variant ? product?.colors_variant[0].value : 'Все цвета',
 		})
 		brands.push({
 			name: product?.brands[0]?.name ? product?.brands[0]?.name : 'Все бренды',
