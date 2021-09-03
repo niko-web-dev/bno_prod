@@ -136,7 +136,7 @@ export default function useBrands(products) {
 
 	function addFilter(name, categ) {
 		let prevArray = filters[categ]
-		if (prevArray.indexOf(name) > -1) {
+		if (prevArray?.indexOf(name) > -1) {
 			prevArray.splice(prevArray.indexOf(name), 1)
 			setFilters({
 				...filters,

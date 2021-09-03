@@ -24,7 +24,7 @@ const Products = ({ products }) => {
 			}
 		}
 	}
-	if (defaultParams.slug != newDef.slug){
+	if (defaultParams.slug !== newDef?.slug){
 		setDefaultParams(newDef)
 	}
 

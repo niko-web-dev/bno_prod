@@ -76,14 +76,14 @@ const CategoryFilter = ({
 
 	function addFilter(name, categ) {
 		let prevArray = filters[categ]
-		if (prevArray.indexOf(name) > -1) {
+		if (prevArray?.indexOf(name) > -1) {
 			prevArray.splice(prevArray.indexOf(name), 1)
 			setFilters({
 				...filters,
 				[categ]: prevArray,
 			})
 		} else {
-			prevArray.push(name)
+			prevArray?.push(name)
 			setFilters({
 				...filters,
 				[categ]: prevArray,
