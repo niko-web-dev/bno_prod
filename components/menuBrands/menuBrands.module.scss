@@ -23,6 +23,7 @@
 		box-shadow: 0px 0px 0px #dadada;
 		transition: box-shadow 0.5s ease;
 		@media (max-width: 661px) {
+			padding: 10px;
 			margin: 0;
 			margin-bottom: 50px;
 			max-width: 140px;

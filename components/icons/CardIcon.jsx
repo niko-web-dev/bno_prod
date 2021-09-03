@@ -16,8 +16,6 @@ const CardIcon = () => {
 				alt="cart"
 				width={22}
 				height={22}
-			
-				onClick={() => setvIewInput(!viewInput)}
 			/>
 					<span className={s.card__count}>{cardLs?.length}</span>
 				</a>
