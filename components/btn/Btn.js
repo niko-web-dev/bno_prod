@@ -3,12 +3,13 @@ import { useRouter } from 'next/router'
 
 const Btn = ({ setSlideAnim, color, title, link }) => {
 	const router = useRouter()
-
+console.log(color)
 	return (
 		<button
 			className={s.btn}
 			style={{
 				border: color === 'black' ? '2px solid black' : '2px solid white',
+
 			}}
 			onMouseOver={() => {
 				setSlideAnim && setSlideAnim(true)
@@ -18,7 +19,7 @@ const Btn = ({ setSlideAnim, color, title, link }) => {
 			}}
 			onClick={() => router.push(link)}
 		>
-			<h3 style={{ color: color === 'black' ? 'black' : 'white' }}>{title}</h3>
+			{title}
 		</button>
 	)
 }

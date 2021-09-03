@@ -64,7 +64,7 @@ const MainSlider = () => {
 									width={302}
 									height={762}
 									alt="brand"
-									layout={'responsive'}
+// 									layout={'responsive'}
 								/>
 							</div>
 							<div
@@ -97,7 +97,7 @@ const MainSlider = () => {
 									width={1089}
 									height={895}
 									alt="mash"
-									layout={'responsive'}
+// 									layout={'responsive'}
 								/>
 							</div>
 						</div>
@@ -140,7 +140,7 @@ const MainSlider = () => {
 									width={494}
 									height={770}
 									alt="brand"
-									layout={'responsive'}
+// 									layout={'responsive'}
 								/>
 							</div>
 							<div
@@ -157,7 +157,7 @@ const MainSlider = () => {
 								<Image
 									src="/static/images/slider/two/mash.png"
 									width={904}
-									layout={'responsive'}
+// 									layout={'responsive'}
 									height={875}
 									alt="mash"
 								/>

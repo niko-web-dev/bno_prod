@@ -112,17 +112,32 @@
 			width: 25px;
 			height: 25px;
 			font-size: 0px;
-			background: no-repeat url('../../public/static/images/footer-sprice.png')
-				11% 13%/100%;
 			@media screen and (max-width: 651px) {
 				background-position-y: 18%;
 			}
-			&:nth-child(2) {
-				background-position-y: 58%;
+			&_insta {
+				width: 24px;
+				height: 24px;
+				background: no-repeat url('../../public/static/images/insta-white.png');
+				margin-bottom: 25px;
+				@media screen and (max-width: 635px) {
+					margin-bottom: 0;
+					margin-right: 10px;
+				}
 			}
-			&:nth-child(3) {
-				background-position-y: 102%;
+			&_share {
+				width: 24px;
+				height: 24px;
+				background: no-repeat url('../../public/static/images/share-white.png');
+
 			}
+			//&:nth-child(2) {
+			//
+			//	//background-position-y: 58%;
+			//}
+			//&:nth-child(3) {
+			//	background-position-y: 102%;
+			//}
 			& + & {
 				margin-top: 25px;
 				@media screen and (max-width: 651px) {
