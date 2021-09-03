@@ -18,6 +18,8 @@ const CardSlider = ({ images }) => {
 		},
 		bulletClass: s.card__sliderBullet,
 		bulletActiveClass: s.card__sliderBulletActive,
+		prevEl: navigationPrevRef.current ? navigationPrevRef.current : undefined,
+		nextEl: navigationNextRef.current ? navigationNextRef.current : undefined,
 	}
 
 	return (
@@ -46,11 +48,11 @@ const CardSlider = ({ images }) => {
 				pagination={pagination}
 				loop={false}
 				slidesPerView={1}
+                slidesPerGroup={1}
 				className={s.card__sliderWrapper}
 				onInit={(swiper) => {
 					swiper.params.navigation.prevEl = navigationPrevRef.current
 					swiper.params.navigation.nextEl = navigationNextRef.current
-					swiper.navigation.init()
 					swiper.navigation.update()
 				}}
 			>
