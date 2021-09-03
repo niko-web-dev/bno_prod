@@ -1,11 +1,14 @@
 import {useState } from 'react'
 import Image from 'next/image'
 import s from '../cardForm/cardForm.module.scss'
+import {useRouter} from 'next/router'
 // import axios from 'axios'
 
 const SearchIcon = () => {
 	const [searchInput, setSearchInput] = useState('')
 	const [viewInput, setvIewInput] = useState(false)
+
+	const router = useRouter()
 
 	const changeSearchInput = function (event) {
 		setSearchInput(event.target.value)
@@ -19,6 +22,16 @@ const SearchIcon = () => {
 	// 		)
 	// 		.then((res) => console.log(res.data))
 	// }
+
+
+	function searchProduct(e) {
+		if (e.key === "Enter") {
+			router.push({
+				pathname: '/products',
+				query: { search: searchInput }
+			})
+		}
+	}
 
 	const inputDisplay = viewInput === false ? '0' : '1'
 
@@ -37,17 +50,18 @@ const SearchIcon = () => {
 				className={s.cardForm__input + ' ' + s.cardForm__input_search}
 				id="searchInput"
 				onChange={changeSearchInput}
+				onKeyPress={searchProduct}
 				value={searchInput}
 				required={true}
 				type="text"
 			/>
-			<button type="submit" onClick={(e) => {
-				console.log("submit", e)
-				// searchSubmit(e)
-			}}>
-				{' '}
-				go{' '}
-			</button>
+			{/*<button type="submit" onClick={(e) => {*/}
+			{/*	console.log("submit", e)*/}
+			{/*	// searchSubmit(e)*/}
+			{/*}}>*/}
+			{/*	{' '}*/}
+			{/*	go{' '}*/}
+			{/*</button>*/}
 			<style jsx>
 				{`
 					.search__icon {

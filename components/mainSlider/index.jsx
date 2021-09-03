@@ -35,6 +35,7 @@ const MainSlider = () => {
 								alt="brand"
 								width={100}
 								height={100}
+								className={s.slide__infoImg}
 							/>
 							<h2>Stone island</h2>
 
@@ -63,6 +64,7 @@ const MainSlider = () => {
 									width={302}
 									height={762}
 									alt="brand"
+									layout={'responsive'}
 								/>
 							</div>
 							<div
@@ -95,6 +97,7 @@ const MainSlider = () => {
 									width={1089}
 									height={895}
 									alt="mash"
+									layout={'responsive'}
 								/>
 							</div>
 						</div>
@@ -113,6 +116,7 @@ const MainSlider = () => {
 									alt="brand"
 									width={100}
 									height={47}
+									className={s.slide__infoImg}
 								/>
 							</div>
 							<h2>evisu</h2>
@@ -136,6 +140,7 @@ const MainSlider = () => {
 									width={494}
 									height={770}
 									alt="brand"
+									layout={'responsive'}
 								/>
 							</div>
 							<div
@@ -152,6 +157,7 @@ const MainSlider = () => {
 								<Image
 									src="/static/images/slider/two/mash.png"
 									width={904}
+									layout={'responsive'}
 									height={875}
 									alt="mash"
 								/>

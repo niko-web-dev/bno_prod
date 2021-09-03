@@ -97,16 +97,25 @@ const CategoryFilter = ({
 		closeAside(false)
 	}
 
+	function addSearchItems(slug){
+		updateFilter(filters, slug)
+	}
+
+	const params =
+		typeof window !== 'undefined' ? defaultParams : undefined
+
 	useEffect(() => {
-		if (defaultParams !== undefined) {
+		if (params !== undefined) {
 			switch (defaultParams.type) {
 				case 'brand':
 					return addFilter(defaultParams.slug, 'brands')
+				case 'search':
+					return addSearchItems(defaultParams.slug)
 				default:
 					return addFilter(defaultParams.slug, defaultParams.type)
 			}
 		}
-	}, [])
+	}, [defaultParams])
 
 	return (
 		<aside

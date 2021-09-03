@@ -9,6 +9,11 @@
 	top: 32%;
 	right: 0;
 	z-index: 1000;
+	@media (max-width: 850px) {
+		top: 77%;
+		left: 0;
+		right: 0;
+	}
 }
 
 .pagination {
@@ -25,21 +30,39 @@
 	align-content: center;
 	flex-direction: column;
 	transition: all ease 0.5s;
+	@media (max-width: 850px) {
+		min-height: auto;
+		flex-direction: row;
+		height: 1px;
+		width: 100%;
+	}
 	:after {
 		top: 0; //50% для второго сотстояния
 		height: 100%;
+		@media (max-width: 850px) {
+			left: 0;
+			width: 100%;
+		}
 	}
 
 	&__count {
 		font-size: 24px;
 		transform: rotate(90deg);
 		font-weight: 700;
+		@media (max-width: 850px) {
+			position: relative;
+			top: -20px;
+			transform: rotate(0deg);
+		}
 	}
 	&__prev,
 	&__next {
 		position: absolute;
 		left: 0;
 		cursor: pointer;
+		@media (max-width: 850px) {
+			display: none;
+		}
 	}
 	&__prev {
 		top: -55px;
@@ -59,6 +82,12 @@
 	height: 40%;
 	width: 1px;
 	background: #000;
+	@media (max-width: 850px) {
+		top: 0;
+		left: 10%;
+		width: 40%;
+		height: 100%;
+	}
 }
 .pagination__border_two:after {
 	content: '';
@@ -68,6 +97,12 @@
 	height: 40%;
 	width: 1px;
 	background: #000;
+	@media (max-width: 850px) {
+		top: 0;
+		left: 50%;
+		width: 40%;
+		height: 100%;
+	}
 }
 
 .pagination__none:after {

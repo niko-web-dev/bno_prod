@@ -9,22 +9,25 @@ import { useRouter } from 'next/router'
 const Products = ({ products }) => {
 	const [actualProduct, setActualProduct] = useState(products)
 	const [filterActive, setFilterActive] = useState(false)
+	const [defaultParams, setDefaultParams] = useState({})
 	const [lastPages, setLastPages] = useState(
 		Math.ceil((products.length + 1) / 9)
 	)
 	const [currentPage, setCurrentPage] = useState(1)
 	const router = useRouter()
-	let defaultParams
+	let newDef
 	if (router.query) {
 		for (let item in router.query) {
-			if (item !== 'search') {
-				defaultParams = {
-					type: item,
-					slug: router.query[item],
-				}
+			newDef = {
+				type: item,
+				slug: router.query[item],
 			}
 		}
 	}
+	if (defaultParams.slug != newDef.slug){
+		setDefaultParams(newDef)
+	}
+
 	products.map((item) => {
 		if (!item.brands[0]) {
 			item.brands[0] = {
@@ -36,13 +39,14 @@ const Products = ({ products }) => {
 		setFilterActive(check)
 	}
 
-	function updateFilter(filter) {
+	function updateFilter(filter, search = '') {
 		setActualProduct(products)
 		let newItems = []
 		let newItemsBrand = []
 		let newItemsType = []
 		let newItemsColor = []
 		let newItemsSize = []
+		let newItemsSearch = []
 		let filteredObject = []
 
 		if (filter.brands.length > 0) {
@@ -89,6 +93,15 @@ const Products = ({ products }) => {
 			newItemsSize = [...new Set(newItemsSize)]
 			filteredObject.push(newItemsSize)
 		}
+
+		products.map((item) => {
+			let fullname = `${item.code} ${item.title}`;
+			if (fullname.indexOf(search) > -1) {
+				newItemsSearch.push(item)
+			}
+		})
+		filteredObject.push(newItemsSearch)
+
 
 		if (filteredObject.flat(2).length < 1) {
 			setActualProduct(products)
