@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps, router }) {
 		Router.events.on("routeChangeComplete", () => NProgress.done());
 		Router.events.on("routeChangeError", () => NProgress.done());
 	  }, []);
+
 	return (
 		<>
 			<Head>
@@ -39,8 +40,6 @@ function MyApp({ Component, pageProps, router }) {
 						transition={{ type: 'linear' }} 
 						onExitComplete={() => window.scrollTo(0, 0)}
 						key={router.route}
-						// initial="pageInitial"
-						// animate="pageAnimate"
 						variants={animation.page}
 		>
 						<Component {...pageProps} />
@@ -74,7 +73,7 @@ function MyApp({ Component, pageProps, router }) {
           transform: rotate(3deg) translate(0px, -4px);
         }
         #nprogress .spinner {
-          display: "block";
+          display: block;
           position: fixed;
           z-index: 1031;
           top: 15px;
@@ -115,8 +114,8 @@ function MyApp({ Component, pageProps, router }) {
             transform: rotate(360deg);
           }
         }
-      `}</style>);
-		
+      `}</style>
+
 	</>
 	)
 }

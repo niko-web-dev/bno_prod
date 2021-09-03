@@ -6,14 +6,12 @@
 	padding: 60px 0;
 	background: transparent;
 	z-index: 50;
+	@media (max-width: 500px) {
+		width: 96%;
+	}
 	&__menu {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
 	}
-	// & div {
-	// 	display: flex;
-	// 	justify-content: space-between;
-	// 	align-items: center;
-	// }
 }
