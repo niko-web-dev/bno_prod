@@ -12,12 +12,11 @@ import Pagination from '../Pagination'
 
 import { animation } from '../../animation/animation'
 import { ContextAnimation } from '../../context/contextAnimation'
-import useWindowSize  from '../../hooks'
-
 const MainSlider = () => {
+
+
 	const [slide, setSlide] = useState(1)
 	const [slideAnim, setSlideAnim] = useContext(ContextAnimation)
-  	const size = useWindowSize();
 
 	const slideCount = 2 // заменить на arr.length??
 
@@ -67,6 +66,7 @@ const MainSlider = () => {
 									height={762}
 									alt="brand"
 									layout="intrinsic"
+
 								/>
 							</div>
 							<div
@@ -203,7 +203,7 @@ const MainSlider = () => {
 						/>
 					</div>
 					<div className={s.slide__icons}>
-						<Icons dir="row">
+						<Icons>
 							<InstaIcon />
 							<ShareIcon />
 						</Icons>
