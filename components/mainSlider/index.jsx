@@ -8,7 +8,7 @@ import Icons from '../icons'
 import InstaIcon from '../icons/instagram'
 import ShareIcon from '../icons/share'
 import Btn from '../btn/Btn'
-import Pagination from '../Pagination'
+import Pagination from '../pagination/index'
 
 import { animation } from '../../animation/animation'
 import { ContextAnimation } from '../../context/contextAnimation'
