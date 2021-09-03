@@ -8,7 +8,7 @@ import Icons from '../icons'
 import InstaIcon from '../icons/instagram'
 import ShareIcon from '../icons/share'
 import Btn from '../btn/Btn'
-import Pagination from '../Pagination'
+// import Pagination from '../Pagination'
 
 import { animation } from '../../animation/animation'
 import { ContextAnimation } from '../../context/contextAnimation'
@@ -195,12 +195,12 @@ const MainSlider = () => {
 					</motion.div>
 
 					<div>
-						<Pagination
-							slide={slide}
-							setSlide={setSlide}
-							withCount={true}
-							position="right"
-						/>
+						{/*<Pagination*/}
+						{/*	slide={slide}*/}
+						{/*	setSlide={setSlide}*/}
+						{/*	withCount={true}*/}
+						{/*	position="right"*/}
+						{/*/>*/}
 					</div>
 					<div className={s.slide__icons}>
 						<Icons>
