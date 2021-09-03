@@ -15,4 +15,13 @@
 	letter-spacing: 1px;
 
 	z-index: 1000;
+
+	&:hover {
+		border: 2px solid white;
+		background: black;
+		color: #fff;
+		h3 {
+
+		}
+	}
 }

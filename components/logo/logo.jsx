@@ -1,24 +1,22 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import s from './logo.module.scss'
 
-const Logo= ({ color }) => {
+const Logo= () => {
 	return (
 		<>
-			<Link href="/" shallow={true} scroll={false}>
-				<a>
+			<Link href="/" shallow={true} scroll={false} >
+				<a className={s.header__logo}>
 					<Image
-						className="header__logo"
-						src={
-							color === 'black'
-								? '/static/images/logo.png'
-								: '/static/images/white-logo.png'
-						}
+						src={'/static/images/logo.png'}
 						alt="logo"
 						width={100}
 						height={100}
+						layout="intrinsic"
 					/>
 				</a>
 			</Link>
+		
 		</>
 	)
 }

@@ -1,4 +1,6 @@
-
+import { useState, useEffect } from 'react';
+// Hook
+export default function useWindowSize() {
 import { useState, useEffect } from 'react';
 
 // Hook
@@ -11,6 +13,10 @@ export default function useWindowSize() {
   });
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+
+      function handleResize() {
+
     // only execute all the code below in client side
     if (typeof window !== 'undefined') {
       // Handler to call on window resize
@@ -22,6 +28,17 @@ export default function useWindowSize() {
         });
       }
 
+      window.addEventListener("resize", handleResize);
+
+
+      handleResize();
+
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+  return windowSize;
+}
       // Add event listener
       window.addEventListener("resize", handleResize);
 
@@ -208,3 +225,4 @@ export default function useWindowSize() {
 // 		addFilter,
 // 	}
 // }
+>>>>>>> 6e6583e277c95d156b80e617c48502982533feba

@@ -127,6 +127,13 @@
 	}
 }
 
+.search__icon {
+	margin-right: 35px;
+	padding-bottom: 5px;
+	@media (max-width: 375px) {
+		margin-right: 10px;
+	}
+}
 .cardForm__input_search {
 	position: absolute;
 	top: 66px;

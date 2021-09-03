@@ -5,7 +5,7 @@ import CardNull from '../components/cardNull'
 import CardConfirm from '../components/cardConfirm'
 import Head from "next/head";
 
-const Card = ({ products }) => {
+const Card = () => {
 	const [status, setStatus] = useState(0)
 	useEffect(() => {
 		const data = JSON.parse(localStorage.getItem('product'))

@@ -10,7 +10,7 @@ const MenuBtn = () => {
 	}
 
 	return (
-		<>
+		<div className="menu__btn">
 			<Image
 				width={50}
 				height={50}
@@ -21,11 +21,18 @@ const MenuBtn = () => {
 			/>
 
 			<style jsx>{`
+				.menu__btn {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(10px);
+				}
 				.menu_img {
 					cursor: pointer;
+					
 				}
 			`}</style>
-		</>
+		</div>
 	)
 }
 

@@ -11,9 +11,9 @@ const Header = () => {
 		<header className={s.header}>
 			<div className="container">
 				<MenuBtn />
-				<Logo color="black" />
-				<Icons dir="row">
-					<div style={{ marginRight: '40px' }}>
+				<Logo/>
+				<Icons>
+					<div >
 						<SearchIcon />
 						<CardIcon />
 					</div>

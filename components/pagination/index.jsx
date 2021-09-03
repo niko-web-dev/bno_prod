@@ -18,6 +18,10 @@ const Pagination = ({
 }) => {
 	const [slideAnim] = useContext(ContextAnimation)
 
+    const clickSliderLine = () => {
+        if (slide === 1) return setSlide(2)
+        if (slide === 2) return setSlide(1)
+    }
 	return (
 		<div
 			className={cn(s.pagination__wrap, {
@@ -30,6 +34,7 @@ const Pagination = ({
 					[s.pagination__border_one]: slide === 1 && !slideAnim,
 					[s.pagination__border_two]: slide === 2 && !slideAnim,
 				})}
+				onClick={clickSliderLine}
 			>
 				<motion.div
 					className={s.pagination__prev}

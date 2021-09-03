@@ -36,7 +36,10 @@
 		}
 	}
 	&Pag {
-		height: 100%;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 80%;
 		width: 50px;
 		display: flex;
 		flex-direction: column;
@@ -47,24 +50,29 @@
 			height: 1px;
 			width: 100%;
 			flex-direction: row;
+			top: 0;
+			transform: translateY(0);
+			margin-bottom: 20px;
 		}
 		&Line {
-			height: auto;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
 			@media (max-width: 850px) {
 				width: 100%;
 				height: 1px;
-				display: flex;
+				flex-direction: row;
 			}
 		}
 	}
 	&Bullet {
 		width: 2px;
-		height: 9vw;
+		height: auto;
 		background: #dadada;
-		display: block;
+		display: flex;
+		flex: 1 1;
 		@media (max-width: 850px) {
-			display: flex;
-			flex: 1 1 50%;
+			flex: 1 1;
 			height: 100%;
 		}
 		&Active {

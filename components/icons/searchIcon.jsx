@@ -2,7 +2,6 @@ import {useState } from 'react'
 import Image from 'next/image'
 import s from '../cardForm/cardForm.module.scss'
 import {useRouter} from 'next/router'
-// import axios from 'axios'
 
 const SearchIcon = () => {
 	const [searchInput, setSearchInput] = useState('')
@@ -13,16 +12,6 @@ const SearchIcon = () => {
 	const changeSearchInput = function (event) {
 		setSearchInput(event.target.value)
 	}
-
-	// const searchSubmit = (e) => {
-	// 	event.preventDefault()
-	// 	axios
-	// 		.get(
-	// 			`http://wp.brandneworder.ru/wp-json/wp/v2/products?search=${searchInput}`
-	// 		)
-	// 		.then((res) => console.log(res.data))
-	// }
-
 
 	function searchProduct(e) {
 		if (e.key === "Enter") {
@@ -36,13 +25,13 @@ const SearchIcon = () => {
 	const inputDisplay = viewInput === false ? '0' : '1'
 
 	return (
-		<div>
+		<div className={s.search__icon}>
 			<Image
 				src="/static/images/search.png"
 				alt="brand"
 				width={22}
 				height={22}
-				className="search__icon"
+			
 				onClick={() => setvIewInput(!viewInput)}
 			/>
 			<input
@@ -55,22 +44,8 @@ const SearchIcon = () => {
 				required={true}
 				type="text"
 			/>
-			{/*<button type="submit" onClick={(e) => {*/}
-			{/*	console.log("submit", e)*/}
-			{/*	// searchSubmit(e)*/}
-			{/*}}>*/}
-			{/*	{' '}*/}
-			{/*	go{' '}*/}
-			{/*</button>*/}
-			<style jsx>
-				{`
-					.search__icon {
-						margin-right: 35px;
-						padding-right: 45px;
-					}
-}
-				`}
-			</style>
+		
+			
 		</div>
 	)
 }

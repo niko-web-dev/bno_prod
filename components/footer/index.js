@@ -1,8 +1,7 @@
-// @ts-ignore
 import s from './footer.module.scss'
-import Logo from '../logo/logo'
 import Link from 'next/link'
 import { useState } from 'react'
+import Image from 'next/image'
 
 const Footer = () => {
 	const [email, setEmail] = useState('')
@@ -49,7 +48,16 @@ const Footer = () => {
 			<div className="container">
 				<div className={s.footer__wrapper}>
 					<div className={s.footer__logo}>
-						<Logo color="white" />
+						<Link href="/" shallow={true} scroll={false} >
+							<a className="header__logo">
+								<Image
+									src={'/static/images/white-logo.png'}
+									alt="logo"
+									width={100}
+									height={100}
+								/>
+							</a>
+						</Link>
 						<p>
 							order your future MoSCOW
 							<br />
@@ -76,14 +84,12 @@ const Footer = () => {
 						</button>
 					</div>
 					<div className={s.footer__social}>
-						<Link href={`/telegram`} scroll={false}>
-							<a className={s.footer__socialLink}>telegram</a>
-						</Link>
-						<Link href={`/instagram`} scroll={false}>
-							<a className={s.footer__socialLink}>instagram</a>
+
+						<Link href={`https://instagram.com/brandneworder.store?utm_medium=copy_link`} t scroll={false}>
+							<a  target="_blank" className={s.footer__socialLink_insta}></a>
 						</Link>
 						<Link href={`/share`} scroll={false}>
-							<a className={s.footer__socialLink}>share</a>
+							<a className={s.footer__socialLink_share}></a>
 						</Link>
 					</div>
 				</div>
