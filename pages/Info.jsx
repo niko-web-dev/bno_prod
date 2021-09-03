@@ -62,12 +62,12 @@ const Info = () => {
 									width={88}
 									height={88}
 								/>
-								<a href="@b.n.o.store" target="_blank">
+								<a href="https://instagram.com/brandneworder.store?utm_medium=copy_link"rel="noreferrer">
 									<b style={{ textTransform: 'uppercase' }}>Instagram</b> <br />
 									@b.n.o.store
 								</a>
-								<a href="@b.n.o.store" target="_blank">
-									<b style={{ textTransform: 'uppercase' }}>telegram</b> <br />
+								<a href="https://paypal.me/BNOstore?locale.x=ru_RU" rel="noreferrer">
+									<b style={{ textTransform: 'uppercase' }}>Оплата</b> <br />
 									@b.n.o.store
 								</a>
 							</div>

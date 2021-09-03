@@ -141,7 +141,7 @@ const Menu = () => {
 								<Link href="/Info" shallow={true} scroll={false}>
 									<a>О нас</a>
 								</Link>
-								<Link href="/delivery" shallow={true} scroll={false}>
+								<Link href="/Info" shallow={true} scroll={false}>
 									<a>Доставка</a>
 								</Link>
 							</div>

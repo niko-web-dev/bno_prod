@@ -8,14 +8,16 @@ import Icons from '../icons'
 import InstaIcon from '../icons/instagram'
 import ShareIcon from '../icons/share'
 import Btn from '../btn/Btn'
-import Pagination from '../pagination/index'
+import Pagination from '../Pagination'
 
 import { animation } from '../../animation/animation'
 import { ContextAnimation } from '../../context/contextAnimation'
+import useWindowSize  from '../../hooks'
 
 const MainSlider = () => {
 	const [slide, setSlide] = useState(1)
 	const [slideAnim, setSlideAnim] = useContext(ContextAnimation)
+  	const size = useWindowSize();
 
 	const slideCount = 2 // заменить на arr.length??
 
@@ -64,7 +66,7 @@ const MainSlider = () => {
 									width={302}
 									height={762}
 									alt="brand"
-// 									layout={'responsive'}
+									layout="intrinsic"
 								/>
 							</div>
 							<div
@@ -74,7 +76,14 @@ const MainSlider = () => {
 										: s.slide__text__imgL
 								}
 							>
-								<span>stone</span>
+								<Image
+									src="/static/images/slider/one/stone.png"
+									alt="cart"
+									width={102}
+									height={468}
+									layout="intrinsic"
+								
+								/>
 							</div>
 							<div
 								className={
@@ -83,7 +92,14 @@ const MainSlider = () => {
 										: s.slide__text__imgR
 								}
 							>
-								<span>i sland</span>
+								<Image
+									src="/static/images/slider/one/island.png"
+									alt="cart"
+									width={102}
+									height={468}
+								
+								/>
+								
 							</div>
 							<div
 								className={
@@ -97,7 +113,7 @@ const MainSlider = () => {
 									width={1089}
 									height={895}
 									alt="mash"
-// 									layout={'responsive'}
+									layout="intrinsic"
 								/>
 							</div>
 						</div>
@@ -110,6 +126,7 @@ const MainSlider = () => {
 						className={s.slide}
 					>
 						<div className={s.slide__info}>
+
 							<div className={s.slide__brand}>
 								<Image
 									src="/static/images/slider/two/brand-logo.png"
@@ -140,24 +157,36 @@ const MainSlider = () => {
 									width={494}
 									height={770}
 									alt="brand"
-// 									layout={'responsive'}
 								/>
 							</div>
 							<div
 								className={`${s.slide__text__imgL} ${s.slide__text__imgL_two}`}
 							>
-								<span>evisu</span>
+								
+								<Image
+									src="/static/images/slider/two/text1.png"
+									alt="evisu"
+									width={102}
+									height={401}
+								
+								/>
 							</div>
 							<div
 								className={`${s.slide__text__imgR} ${s.slide__text__imgR_two}`}
 							>
-								<span>evisu</span>
+								<Image
+									src="/static/images/slider/two/text2.png"
+									alt="evisu"
+									width={108}
+									height={408}
+								
+								/>
 							</div>
+
 							<div className={`${s.slide__mash} ${s.slide__mash_two}`}>
 								<Image
 									src="/static/images/slider/two/mash.png"
 									width={904}
-// 									layout={'responsive'}
 									height={875}
 									alt="mash"
 								/>

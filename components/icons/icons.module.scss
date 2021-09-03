@@ -1,0 +1,15 @@
+.icons {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(90%);
+	margin-right: 40px;
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	@media(max-width: 833px){
+		margin-right:0;
+	}
+}

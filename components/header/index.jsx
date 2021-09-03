@@ -12,8 +12,8 @@ const Header = () => {
 			<div className="container">
 				<MenuBtn />
 				<Logo/>
-				<Icons dir="row">
-					<div style={{ marginRight: '40px' }}>
+				<Icons>
+					<div >
 						<SearchIcon />
 						<CardIcon />
 					</div>
