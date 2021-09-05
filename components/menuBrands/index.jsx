@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 
 import Link from 'next/link'
 import Image from 'next/image'
 import s from './menuBrands.module.scss'
+import { contextMenu } from '../../context/contextMenu'
 
 const MenuBrands = () => {
 	const [brands, setBrands] = useState([])
+	const [toggleMenu, setToggleMenu] = useContext(contextMenu)
 
 	useEffect(() => {
 		try {
@@ -24,18 +26,20 @@ const MenuBrands = () => {
 				{brands?.map((item) => {
 					return (
 						<Link
-							href={{ pathname: '/products', query: { brand: item.slug } }}
+							href={{ pathname: '/products', query: { search: item.slug } }}
 							key={item.id}
 							shallow={true}
 							scroll={false}
+
 						>
-							<a className={s.wrapper__item}>
+							<a className={s.wrapper__item} onClick={() => setToggleMenu(false)} >
 								<Image
 									width={300}
 									height={400}
 									src={item?.logo_image?.src}
 									alt={item.description}
 									className={s.wrapper__image}
+
 								/>
 								<h2>{item.title}</h2>
 							</a>

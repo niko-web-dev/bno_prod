@@ -1,11 +1,12 @@
- import { useEffect, useState } from 'react'
-
+ import { useEffect, useState, useContext } from 'react'
+ import { contextMenu } from '../../context/contextMenu'
 import s from './menuCategory.module.scss'
 import Link from 'next/link'
 
 const MenuCategory = (brand) => {
 	const [categories, setCategories] = useState([])
 	const [categoriesOpen, setCategoriesOpen] = useState(1)
+	const [toggleMenu, setToggleMenu] = useContext(contextMenu)
 	let checkClass
 
 	async function getMenuApi(endpoint) {
@@ -108,7 +109,7 @@ const MenuCategory = (brand) => {
 													query: { type: item.slug },
 												}}
 											>
-												{item.name}
+												<a onClick={() => setToggleMenu(false)}>{item.name}</a>
 											</Link>
 										</li>
 									)

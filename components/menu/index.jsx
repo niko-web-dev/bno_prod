@@ -103,10 +103,10 @@ const Menu = () => {
 								].join(' ')}
 							>
 								<Link href="/Info" shallow={true} scroll={false}>
-									<a>О нас</a>
+									<a onClick={() => setToggleMenu(false)}>О нас</a>
 								</Link>
 								<Link href="/Info" shallow={true} scroll={false}>
-									<a>Доставка</a>
+									<a onClick={() => setToggleMenu(false)}>Доставка</a>
 								</Link>
 							</div>
 						</nav>
