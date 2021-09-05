@@ -95,7 +95,9 @@ const Products = ({ products }) => {
 		}
 
 		products.map((item) => {
-			let fullname = `${item.code} ${item.title}`;
+			let fullname = `${item.code} ${item.title} ${item.brands[0].name}`;
+			fullname = fullname.toLowerCase()
+			search = search.toLowerCase()
 			if (fullname.indexOf(search) > -1) {
 				newItemsSearch.push(item)
 			}
