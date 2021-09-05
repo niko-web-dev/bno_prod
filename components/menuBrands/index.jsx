@@ -26,7 +26,7 @@ const MenuBrands = () => {
 				{brands?.map((item) => {
 					return (
 						<Link
-							href={{ pathname: '/products', query: { search: item.slug } }}
+							href={{ pathname: '/products', query: { brand: item.slug } }}
 							key={item.id}
 							shallow={true}
 							scroll={false}
