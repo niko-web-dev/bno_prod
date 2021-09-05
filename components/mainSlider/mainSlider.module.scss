@@ -116,7 +116,9 @@
 			bottom: 281px;
 		}
 		@media (max-width: 320px) {
+			transform: scale(0.6);
 			left: 5%;
+			bottom: 272px;
 		}
 		&__anim {
 			transform: scale(1.2) rotate(-5deg);
@@ -134,7 +136,7 @@
 			transform: scale(1.6);
 		}
 		@media (max-width: 420px) {
-			bottom: 44%;
+			bottom: 48%;
 			left: 0%;
 }
 		&__anim {
