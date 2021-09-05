@@ -8,7 +8,7 @@ import { contextMenu } from '../../context/contextMenu'
 import { animation } from '../../animation/animation'
 import MenuBrands from '../menuBrands'
 import MenuCategory from '../menuCategory'
-import SearchIcon from '../icons/SearchIcon/index'
+import SearchIcon from '../icons/SearchIcon'
 
 const Menu = () => {
 	const [toggleMenu, setToggleMenu] = useContext(contextMenu)
