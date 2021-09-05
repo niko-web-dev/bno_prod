@@ -91,7 +91,7 @@ const Menu = () => {
 								</div>
 							</div>
 							<div className={s.header__menu__input}>
-								<SearchIcon />
+								{/*<SearchIcon />*/}
 							</div>
 						</div>
 						<nav className={s.menu}>
