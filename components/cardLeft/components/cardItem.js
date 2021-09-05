@@ -6,7 +6,6 @@ import { ContextCard } from '../../../context/contextCard'
 const CardItem = (product) => {
 	const [cardLs, setCardLs] = useContext(ContextCard)
 	const deleteItem = () => alert('delete: ' + product.id)
-	console.log(product?.brands[0])
 	return (
 		<div className={style.cardProduct__item}>
 			<Image

@@ -53,8 +53,6 @@ const CardForm  = ({ updateStatus }) => {
 
 				let form_data = await getFormData(data)
 
-				console.log(form_data.getAll('name'))
-
 				let response = await fetch(
 					'http://wp.brandneworder.ru/wp-json/wp/v2/orders',
 					{

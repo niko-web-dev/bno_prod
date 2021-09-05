@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 
 const Btn = ({ setSlideAnim, color, title, link }) => {
 	const router = useRouter()
-console.log(color)
 	return (
 		<button
 			className={s.btn}

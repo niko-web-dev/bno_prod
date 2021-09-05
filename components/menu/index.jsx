@@ -8,7 +8,7 @@ import { contextMenu } from '../../context/contextMenu'
 import { animation } from '../../animation/animation'
 import MenuBrands from '../menuBrands'
 import MenuCategory from '../menuCategory'
-// import SearchIcon from '../icons/SearchIcon'
+import SearchIcon from '../icons/searchIcon'
 
 const Menu = () => {
 	const [toggleMenu, setToggleMenu] = useContext(contextMenu)
@@ -91,7 +91,7 @@ const Menu = () => {
 								</div>
 							</div>
 							<div className={s.header__menu__input}>
-								{/*<SearchIcon />*/}
+								<SearchIcon />
 							</div>
 						</div>
 						<nav className={s.menu}>
