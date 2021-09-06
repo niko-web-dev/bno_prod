@@ -108,7 +108,6 @@ const CategoryFilter = ({
 		if (params !== undefined) {
 			filters.brands = []
 			filters.type = []
-			console.log('work')
 			switch (defaultParams.type) {
 				case 'brand':
 					return addFilter(defaultParams.slug, 'brands')

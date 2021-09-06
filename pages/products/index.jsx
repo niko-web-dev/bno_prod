@@ -114,7 +114,6 @@ const Products = ({ products }) => {
 				)
 			)
 			if (newItems.length + 1 > 9) {
-				console.log(newItems.length)
 				let pages = Math.ceil((newItems.length + 1) / 9)
 				setLastPages(pages)
 			}

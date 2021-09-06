@@ -99,9 +99,7 @@ const Products  = ({ products }) => {
 					arr.some((obj) => obj.id == objFromFirstArr.id)
 				)
 			)
-			console.log(newItems.length)
 			if (newItems.length + 1 > 9) {
-				console.log(newItems.length)
 				let pages = Math.ceil((newItems.length + 1) / 9)
 				setLastPages(pages)
 			}
@@ -267,7 +265,6 @@ const Products  = ({ products }) => {
 
 // http://wp.brandneworder.ru/wp-json/wp/v2/products
 export async function getServerSideProps({ query }) {
-	console.log(query)
 	try {
 		const res = await fetch(`http://wp.brandneworder.ru/wp-json/wp/v2/products/`)
 
