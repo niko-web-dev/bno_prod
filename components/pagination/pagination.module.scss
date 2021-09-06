@@ -10,12 +10,15 @@
 	right: 0;
 	z-index: 1000;
 	@media (max-width: 850px) {
-		top: 73%;
+		top: 78%;
 		left: 0;
 		right: 0;
 	}
+	@media (max-width: 420px) {
+		top: 70%;
+	}
 	@media (max-width: 375px) {
-		top: 68%;
+		top: 71%;
 	}
 	@media (max-width: 320px) {
 		top: 63%;

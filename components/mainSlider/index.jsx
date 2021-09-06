@@ -12,13 +12,15 @@ import Pagination from '../pagination/index'
 
 import { animation } from '../../animation/animation'
 import { ContextAnimation } from '../../context/contextAnimation'
+// import {useWindowSize}  from '../../hooks'
+
 const MainSlider = () => {
-
-
+	
 	const [slide, setSlide] = useState(1)
 	const [slideAnim, setSlideAnim] = useContext(ContextAnimation)
+	// const windowSize = useWindowSize()
+	// const slideCount = 2 // заменить на arr.length??
 
-	const slideCount = 2 // заменить на arr.length??
 
 	return (
 		<div className={s.mainSlider}>
@@ -151,7 +153,13 @@ const MainSlider = () => {
 							/>
 						</div>
 						<div className={s.slide__img}>
-							<div className={`${s.slide__man} ${s.slide__man_two}`}>
+							<div
+								className={
+									slideAnim
+										? `${s.slide__man_two} ${s.slide__man_two__anim}`
+										: s.slide__man_two
+								}
+							>
 								<Image
 									src="/static/images/slider/two/man.png"
 									width={494}
@@ -160,7 +168,11 @@ const MainSlider = () => {
 								/>
 							</div>
 							<div
-								className={`${s.slide__text__imgL} ${s.slide__text__imgL_two}`}
+								className={
+									slideAnim
+										? `${s.slide__text__imgL} ${s.slide__text__imgL__anim}`
+										: s.slide__text__imgL
+								}
 							>
 								
 								<Image
@@ -172,7 +184,11 @@ const MainSlider = () => {
 								/>
 							</div>
 							<div
-								className={`${s.slide__text__imgR} ${s.slide__text__imgR_two}`}
+								className={
+									slideAnim
+										? `${s.slide__text__imgR} ${s.slide__text__imgR__anim}`
+										: s.slide__text__imgR
+								}
 							>
 								<Image
 									src="/static/images/slider/two/text2.png"
@@ -183,7 +199,13 @@ const MainSlider = () => {
 								/>
 							</div>
 
-							<div className={`${s.slide__mash} ${s.slide__mash_two}`}>
+							<div
+								className={
+									slideAnim
+										? `${s.slide__mash_two} ${s.slide__mash_two__anim}`
+										: s.slide__mash_two
+								}
+							>
 								<Image
 									src="/static/images/slider/two/mash.png"
 									width={904}
