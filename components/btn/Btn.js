@@ -1,8 +1,11 @@
 import s from './btn.module.scss'
 import { useRouter } from 'next/router'
+import {useWindowSize}  from '../../hooks'
 
 const Btn = ({ setSlideAnim, color, title, link }) => {
+	const windowSize = useWindowSize()
 	const router = useRouter()
+
 	return (
 		<button
 			className={s.btn}
@@ -11,10 +14,10 @@ const Btn = ({ setSlideAnim, color, title, link }) => {
 
 			}}
 			onMouseOver={() => {
-				setSlideAnim && setSlideAnim(true)
+				windowSize.width > 830 && setSlideAnim && setSlideAnim(true)
 			}}
 			onMouseOut={() => {
-				setSlideAnim && setSlideAnim(false)
+				windowSize.width > 830 && setSlideAnim && setSlideAnim(false)
 			}}
 			onClick={() => router.push(link)}
 		>

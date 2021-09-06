@@ -12,13 +12,13 @@ import Pagination from '../pagination/index'
 
 import { animation } from '../../animation/animation'
 import { ContextAnimation } from '../../context/contextAnimation'
-// import {useWindowSize}  from '../../hooks'
+
 
 const MainSlider = () => {
 	
 	const [slide, setSlide] = useState(1)
 	const [slideAnim, setSlideAnim] = useContext(ContextAnimation)
-	// const windowSize = useWindowSize()
+
 	// const slideCount = 2 // заменить на arr.length??
 
 
