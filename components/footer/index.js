@@ -53,7 +53,7 @@ const Footer = () => {
 								<Image
 									src={'/static/images/white-logo.png'}
 									alt="logo"
-									width={100}
+									width={114}
 									height={100}
 								/>
 							</a>

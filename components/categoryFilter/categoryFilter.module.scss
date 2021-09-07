@@ -60,6 +60,7 @@
 	&__block {
 		display: flex;
 		flex-direction: column;
+		margin-bottom: 20px;
 		&Active &ButtonCheck {
 			background: #000;
 			color: #ffffff;
