@@ -3,7 +3,7 @@ import s from '../../pages/products/product-page.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ContextCard } from '../../context/contextCard'
-import Popup from '../popup/index'
+// import Popup from '../popup/index'
 
 const ProductInfo = ({ product }) => {
 	const [colors, setColors] = useState([])
@@ -67,18 +67,18 @@ const ProductInfo = ({ product }) => {
 		}
 	}
 
-	const popUpNow = () => {
-		setPopUp(true);
-	}
-	const hidePopUp = () => {
-		setTimeout(() => {
-			setPopUp(false)
-		}, 5000)
-	}
+	// const popUpNow = () => {
+	// 	setPopUp(true);
+	// }
+	// const hidePopUp = () => {
+	// 	setTimeout(() => {
+	// 		setPopUp(false)
+	// 	}, 5000)
+	// }
 
 	return (
 		<form className={s.card__info}>
-			<Popup activePopup={activePopup} hidePopUp={hidePopUp} cardLs={cardLs}/>
+			{/*<Popup activePopup={activePopup} hidePopUp={hidePopUp} cardLs={cardLs}/>*/}
 
 			<div
 				className={[
@@ -227,7 +227,7 @@ const ProductInfo = ({ product }) => {
 			) : (
 				<button className={s.card__button} onClick={(e) => {
 					addToCard(e)
-					popUpNow()
+					// popUpNow()
 				}}>
 					КУПИТЬ
 				</button>
