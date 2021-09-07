@@ -37,11 +37,11 @@ const MenuBrands = () => {
 									width={300}
 									height={400}
 									src={item?.logo_image?.src}
-									alt={item.description}
+									alt={'bnand'}
 									className={s.wrapper__image}
 
 								/>
-								<h2>{item.title}</h2>
+								{/*<h2>{item.title}</h2>*/}
 							</a>
 						</Link>
 					)

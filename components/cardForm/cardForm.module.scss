@@ -55,6 +55,7 @@
 		&:hover {
 			border: 1px solid #000000;
 		}
+
 	}
 	&__callText {
 		margin-bottom: 40px;
@@ -109,7 +110,6 @@
 		background-color: transparent;
 		cursor: pointer;
 		padding: 15px;
-		//width: 100%;
 		text-align: center;
 		color: #000000;
 		font-family: Eurostile;
@@ -129,24 +129,32 @@
 
 .search__icon {
 	margin-right: 35px;
-	padding-bottom: 5px;
 	@media (max-width: 375px) {
 		margin-right: 10px;
 
 	}
 	&_img {
 		z-index: 20;
-		@media (max-width: 375px) {
-			padding-right: 20px;
-		}
+	}
+	&__svg {
+		position: absolute;
+		top: -12px;
+		z-index: 20;
+			@media (max-width: 375px) {
+				right: 10px;
+			}
 	}
 }
 .cardForm__input_search {
 	position: absolute;
-	top: -12px;
+	top: -27px;
 	height: 50px;
-	right: 53%;
+	right: -30px;
 	width: 250px;
 	z-index: 10;
 	background: #F1F1F1;
+	@media (max-width: 375px) {
+		right: -10px;
+
+	}
 }
