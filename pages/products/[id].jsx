@@ -24,8 +24,8 @@ const ProductPage= ({ product }) => {
 			</h1>
 					<div className={s.card__content}>
 						<Index
-							brand={product.brands[0].name}
-							types={[product.categories[0].name, product.categories[product.categories.length - 1].name]}
+							brand={[product.brands[0].name, product.brands[0].slug]}
+							types={[[product.categories[0].name, product.categories[0].slug], [product.categories[product.categories.length - 1].name, product.categories[product.categories.length - 1].slug]]}
 						/>
 						<CardSlider images={product.gallery} />
 					</div>

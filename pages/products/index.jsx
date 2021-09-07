@@ -206,7 +206,7 @@ const Products = ({ products }) => {
 								0,
 								currentPage === lastPages
 									? actualProduct.length + 1
-									: currentPage * 8 + 1
+									: currentPage * 9
 							)
 							?.map((product, index) => {
 								return (
@@ -286,7 +286,7 @@ const Products = ({ products }) => {
 export async function getServerSideProps({ query }) {
 	console.log(query)
 	try {
-		const res = await fetch(`http://wp.brandneworder.ru/wp-json/wp/v2/products/`)
+		const res = await fetch(`http://wp.brandneworder.ru/wp-json/wp/v2/products?posts_per_page=100`)
 
 		const products = await res.json()
 
