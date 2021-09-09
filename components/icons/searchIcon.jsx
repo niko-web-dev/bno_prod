@@ -50,6 +50,7 @@ const SearchIcon = () => {
 				{/*</svg>*/}
 				{/*:*/}
 					<div className={s.search__icon_img} style={{ display:  viewInput ? "none" : "block" }}>
+						
 					<Image
 						src="/static/images/search.png"
 						alt="brand"

@@ -7,7 +7,9 @@
 	}
 	&__card {
 		max-width: 240px;
-
+		@media (max-width: 375px) {
+			margin-bottom: 50px;
+		}
 		&__icon {
 			margin-bottom: 40px;
 			display: flex;

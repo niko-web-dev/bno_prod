@@ -15,6 +15,9 @@
 		padding: 103px 0 108px 0;
 		display: flex;
 		justify-content: space-around;
+		@media (max-width: 420px) {
+			padding: 103px 0 70px 0;
+		}
 	}
 	&__pagination__prev {
 		position: absolute;
