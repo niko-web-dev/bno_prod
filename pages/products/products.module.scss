@@ -4,6 +4,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	@media (max-width: 420px) {
+		padding: 160px 0;
+	}
 	&__button {
 		background: none;
 		border: none;
@@ -15,6 +18,10 @@
 		justify-content: space-between;
 		cursor: pointer;
 		margin-bottom: 125px;
+		@media (max-width: 420px) {
+			margin-right: 5%;
+			height: 60px;
+		}
 		&Pages {
 			display: flex;
 			align-items: center;
@@ -56,6 +63,9 @@
 			line-height: 22px;
 			text-align: center;
 			letter-spacing: 0.15em;
+			@media (max-width: 376px) {
+				font-size: 15px;
+			}
 		}
 	}
 	&__wrapper {

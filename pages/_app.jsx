@@ -1,13 +1,12 @@
 import { useEffect } from "react"
 import Router from "next/router"
-import { motion } from 'framer-motion'
 import { MenuProvider } from '../context/contextMenu'
 import Menu from '../components/menu'
 import Head from 'next/head'
 import NProgress from "nprogress"
 import 'nprogress/nprogress.css'; //styles of nprogress
 import 'swiper/swiper.scss'
-
+import { AnimatePresence } from 'framer-motion'
 import { animation } from '../animation/animation'
 import '../public/styles/globals.css'
 
@@ -19,7 +18,10 @@ import { CardProvider } from '../context/contextCard'
 function MyApp({ Component, pageProps, router }) {
 	useEffect(() => {
 		Router.events.on("routeChangeStart", () => NProgress.start());
-		Router.events.on("routeChangeComplete", () => NProgress.done());
+		Router.events.on("routeChangeComplete", () => {
+			window.scrollTo(0, 0)
+			NProgress.done()
+		});
 		Router.events.on("routeChangeError", () => NProgress.done());
 	  }, []);
 
@@ -33,17 +35,17 @@ function MyApp({ Component, pageProps, router }) {
 				<MenuProvider>
 					<Menu />
 					<Header />
-					<motion.div
+					<AnimatePresence
 						initial="hidden" // Set the initial state to variants.hidden
 						animate="enter" // Animated state to variants.enter
 						exit="exit" // Exit state (used later) to variants.exit
 						transition={{ type: 'linear' }} 
-						onExitComplete={() => window.scrollTo(0, 0)}
+						// onExitComplete={() => window.scrollTo(0, 0)}
 						key={router.route}
 						variants={animation.page}
 		>
 						<Component {...pageProps} />
-					</motion.div>
+					</AnimatePresence>
 					<Footer />
 				</MenuProvider>
 			</CardProvider>
