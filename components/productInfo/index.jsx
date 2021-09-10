@@ -56,6 +56,7 @@ const ProductInfo = ({ product }) => {
 		} else {
 			let products = []
 			products.push(myProduct)
+			setCardLs(localStorage.setItem('product', JSON.stringify(products)))
 			localStorage.setItem('product', JSON.stringify(products))
 		}
 	}
