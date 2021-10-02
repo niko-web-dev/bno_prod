@@ -33,7 +33,7 @@
 		z-index: 1000;
 		@media (max-width: 850px) {
 			width: 100%;
-			padding-top: 80px;
+			padding-top: 0;
 			background: #F1F1F1;
 			z-index: 1200;
 			position: relative;
@@ -48,6 +48,12 @@
 				right: -20px;
 				bottom: 0;
 			}
+		}
+		@media (max-width: 375px) {
+			padding-top: 0px;
+		}
+		@media (max-width: 360px) {
+			padding-top: 46px;
 		}
 		& div:nth-child(1){
 			display: none !important;
@@ -77,6 +83,9 @@
 			@media (max-width: 850px) {
 				font-size: 30px;
 			}
+			@media (max-width: 440px) {
+				margin: 5px 0 14px 0;
+			}
 		}
 	}
 	&__brand {
@@ -102,24 +111,28 @@
 		bottom: -7%;
 		z-index: 1000;
 		transition: all ease 0.3s;
+		@media (max-width: 1024px) {
+			bottom: -20%;
+		}
+
 		@media (max-width: 850px) {
 			left: 32%;
 			bottom: 24%;
 		}
 		@media (max-width: 440px) {
 			left: 23%;
-			bottom: 299px;
-			transform: scale(0.8) translateX(10px);
+			bottom: 27%;
+			transform: scale(0.7) translateX(10px);
 		}
 		@media (max-width: 375px) {
-			transform: scale(0.8);
+			transform: scale(0.7);
 			left: 16%;
-			bottom: 281px;
+			bottom: 23%;
 		}
 		@media (max-width: 320px) {
 			transform: scale(0.6);
 			left: 5%;
-			bottom: 272px;
+			bottom: 233px;
 		}
 		&__anim {
 			transform: scale(1.2) rotate(-10deg);
@@ -132,13 +145,13 @@
 		z-index: 100;
 		transition: all ease 0.3s;
 		@media (max-width: 850px) {
-			bottom: 37%;
+			bottom: 29%;
 			left: 2%;
-			transform: scale(1.6);
 		}
-		@media (max-width: 420px) {
+		@media (max-width: 440px) {
 			bottom: 48%;
 			left: 0%;
+			transform: scale(1.6);
 }
 		&__anim {
 			left: 17%;
@@ -160,7 +173,15 @@
 		transition: all ease 0.3s;
 		@media (max-width: 850px) {
 			bottom: 23%;
-			left: 26%;
+		}
+		@media (max-width: 440px) {
+			bottom: 33%;
+			left: 13%;
+		}
+		@media (max-width: 320px) {
+			bottom: 33%;
+			left: 13%;
+			transform: scale(0.8);
 		}
 		&__anim {
 			bottom: 45%;
@@ -175,16 +196,26 @@
 		z-index: 500;
 		transition: all 0.5s ease;
 		@media (max-width: 960px) {
-			bottom: 48%;
+			bottom: 34%;
     		left: 57%;;
 		}
 		@media (max-width: 768px){
-			bottom: 34%;
+
 			left: 58%;
 		}
 		@media (max-width: 680px){
 			bottom: 44%;
 			left: 70%
+		}
+		@media (max-width: 680px){
+			bottom: 54%;
+		}
+		@media (max-width: 440px){
+			bottom: 40%;
+		}
+		@media (max-width: 320px){
+			left: 60%;
+			transform: scale(0.8);
 		}
 	
 		&__anim {
@@ -225,7 +256,7 @@
 	@media (max-width: 420px) {
 		transform: scale(1.3);
 		left: 20%;
-		bottom: 40%;
+		bottom: 51%;
 	}
 	@media (max-width: 375px) {
 		left: 5px;
@@ -252,11 +283,11 @@
 		
 	}
 	@media (max-width: 420px) {
-		bottom: 42%;
+		bottom: 58%;
 	}
 	@media (max-width: 375px) {
 		left: -3%;
-		bottom: 48%;
+		//bottom: 48%;
 
 	}
 	&__anim {
