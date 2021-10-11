@@ -15,6 +15,22 @@ import Footer from '../components/footer'
 import { CardProvider } from '../context/contextCard'
 
 
+function FacebookPixel() {
+	useEffect(() => {
+		import("react-facebook-pixel")
+			.then((x) => x.default)
+			.then((ReactPixel) => {
+				ReactPixel.init('1367957313598585');
+				ReactPixel.pageView();
+
+				Router.events.on("routeChangeComplete", () => {
+					ReactPixel.pageView();
+				});
+			});
+	});
+	return null;
+}
+
 function MyApp({ Component, pageProps, router }) {
 	useEffect(() => {
 		Router.events.on("routeChangeStart", () => NProgress.start());
@@ -25,11 +41,15 @@ function MyApp({ Component, pageProps, router }) {
 		Router.events.on("routeChangeError", () => NProgress.done());
 	  }, []);
 
+
+
+
 	return (
 		<>
 			<Head>
 				<title>Brand new order</title>
 			</Head>
+			<FacebookPixel />
 		
 			<CardProvider>
 				<MenuProvider>

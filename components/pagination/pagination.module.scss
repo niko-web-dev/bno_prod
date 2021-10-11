@@ -14,11 +14,17 @@
 		left: 0;
 		right: 0;
 	}
+	@media (max-width: 550px) {
+		top: 74%;
+	}
 	@media (max-width: 440px) {
 		top: 70%;
 	}
 	@media (max-width: 375px) {
 		top: 73%;
+	}
+	@media (max-width: 360px) {
+		top: 71%;
 	}
 	@media (max-width: 320px) {
 		top: 65%;
