@@ -1,19 +1,23 @@
 import { useEffect } from "react"
 import Router from "next/router"
+
 import { MenuProvider } from '../context/contextMenu'
 import Menu from '../components/menu'
 import Head from 'next/head'
-import NProgress from "nprogress"
-import 'nprogress/nprogress.css'; //styles of nprogress
-import 'swiper/swiper.scss'
-import { AnimatePresence } from 'framer-motion'
-import { animation } from '../animation/animation'
-import '../public/styles/globals.css'
-
 import Header from '../components/header'
 import Footer from '../components/footer'
+
 import { CardProvider } from '../context/contextCard'
 
+import { AnimatePresence } from 'framer-motion'
+import { animation } from '../animation/animation'
+
+import NProgress from "nprogress"
+import 'nprogress/nprogress.css'; //styles of nprogress
+import { YMInitializer } from 'react-yandex-metrika'
+
+import 'swiper/swiper.scss'
+import '../public/styles/globals.css'
 
 function FacebookPixel() {
 	useEffect(() => {
@@ -42,15 +46,13 @@ function MyApp({ Component, pageProps, router }) {
 	  }, []);
 
 
-
-
 	return (
 		<>
 			<Head>
 				<title>Brand new order</title>
 			</Head>
+			<YMInitializer accounts={[85857781]} />
 			<FacebookPixel />
-		
 			<CardProvider>
 				<MenuProvider>
 					<Menu />
@@ -137,7 +139,6 @@ function MyApp({ Component, pageProps, router }) {
           }
         }
       `}</style>
-
 	</>
 	)
 }
