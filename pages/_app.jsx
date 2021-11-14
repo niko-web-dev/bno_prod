@@ -19,21 +19,21 @@ import 'nprogress/nprogress.css'; //styles of nprogress
 import 'swiper/swiper.scss'
 import '../public/styles/globals.css'
 
-function FacebookPixel() {
-	useEffect(() => {
-		import("react-facebook-pixel")
-			.then((x) => x.default)
-			.then((ReactPixel) => {
-				ReactPixel.init('1367957313598585');
-				ReactPixel.pageView();
-
-				Router.events.on("routeChangeComplete", () => {
-					ReactPixel.pageView();
-				});
-			});
-	});
-	return null;
-}
+// function FacebookPixel() {
+// 	useEffect(() => {
+// 		import("react-facebook-pixel")
+// 			.then((x) => x.default)
+// 			.then((ReactPixel) => {
+// 				ReactPixel.init('1367957313598585');
+// 				ReactPixel.pageView();
+//
+// 				Router.events.on("routeChangeComplete", () => {
+// 					ReactPixel.pageView();
+// 				});
+// 			});
+// 	});
+// 	return null;
+// }
 
 function MyApp({ Component, pageProps, router }) {
 	useEffect(() => {
@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps, router }) {
 				<title>Brand new order</title>
 			</Head>
 			{/*<YMInitializer accounts={[85867169]} />*/}
-			<FacebookPixel />
+			{/*<FacebookPixel />*/}
 			<CardProvider>
 				<MenuProvider>
 					<Menu />
