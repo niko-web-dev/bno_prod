@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import StartWindow from '../components/startWindow'
 import GallerySlider from '../components/gallerySlider'
-import Details from '../components/details'
+// import Details from '../components/details'
 
 const Home = ({ products }) => {
 	return (
@@ -12,7 +12,7 @@ const Home = ({ products }) => {
 			</Head>
 			<StartWindow />
 			<GallerySlider products={products} />
-			<Details />
+			{/*<Details />*/}
 		</>
 	)
 }
