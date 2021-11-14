@@ -1,78 +1,72 @@
-import { AnimatePresence } from 'framer-motion'
-import Head from 'next/head'
-import Router from "next/router"
-import NProgress from "nprogress"
-import 'nprogress/nprogress.css' //styles of nprogress
-import { useEffect } from "react"
-import { YMInitializer } from 'react-yandex-metrika'
-import 'swiper/swiper.scss'
-import { animation } from '../animation/animation'
-import Footer from '../components/footer'
-import Header from '../components/header'
-import Menu from '../components/menu'
-import { CardProvider } from '../context/contextCard'
-import { MenuProvider } from '../context/contextMenu'
-import '../public/styles/globals.css'
+import { AnimatePresence } from "framer-motion";
+import Head from "next/head";
+import Router from "next/router";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css"; //styles of nprogress
+import { useEffect } from "react";
+import "swiper/swiper.scss";
+import { animation } from "../animation/animation";
+import Footer from "../components/footer";
+import Header from "../components/header";
+import Menu from "../components/menu";
+import { CardProvider } from "../context/contextCard";
+import { MenuProvider } from "../context/contextMenu";
+import "../public/styles/globals.css";
 
+// import { YMInitializer } from 'react-yandex-metrika'
 
-
-
-
-
-
-function FacebookPixel() {
-	useEffect(() => {
-		import("react-facebook-pixel")
-			.then((x) => x.default)
-			.then((ReactPixel) => {
-				ReactPixel.init('1367957313598585');
-				ReactPixel.pageView();
-
-				Router.events.on("routeChangeComplete", () => {
-					ReactPixel.pageView();
-				});
-			});
-	});
-	return null;
-}
+// function FacebookPixel() {
+// 	useEffect(() => {
+// 		import("react-facebook-pixel")
+// 			.then((x) => x.default)
+// 			.then((ReactPixel) => {
+// 				ReactPixel.init('1367957313598585');
+// 				ReactPixel.pageView();
+//
+// 				Router.events.on("routeChangeComplete", () => {
+// 					ReactPixel.pageView();
+// 				});
+// 			});
+// 	});
+// 	return null;
+// }
 
 function MyApp({ Component, pageProps, router }) {
-	useEffect(() => {
-		Router.events.on("routeChangeStart", () => NProgress.start());
-		Router.events.on("routeChangeComplete", () => {
-			window.scrollTo(0, 0)
-			NProgress.done()
-		});
-		Router.events.on("routeChangeError", () => NProgress.done());
-	  }, []);
+  useEffect(() => {
+    Router.events.on("routeChangeStart", () => NProgress.start());
+    Router.events.on("routeChangeComplete", () => {
+      window.scrollTo(0, 0);
+      NProgress.done();
+    });
+    Router.events.on("routeChangeError", () => NProgress.done());
+  }, []);
 
-
-	return (
-		<>
-			<Head>
-				<title>Brand new order</title>
-			</Head>
-			<YMInitializer accounts={[85867169]} />
-			<FacebookPixel />
-			<CardProvider>
-				<MenuProvider>
-					<Menu />
-					<Header />
-					<AnimatePresence
-						initial="hidden" // Set the initial state to variants.hidden
-						animate="enter" // Animated state to variants.enter
-						exit="exit" // Exit state (used later) to variants.exit
-						transition={{ type: 'linear' }} 
-						// onExitComplete={() => window.scrollTo(0, 0)}
-						key={router.route}
-						variants={animation.page}
-		>
-						<Component {...pageProps} />
-					</AnimatePresence>
-					<Footer />
-				</MenuProvider>
-			</CardProvider>
-			<style jsx global>{`
+  return (
+    <>
+      <Head>
+        <title>Brand new order</title>
+      </Head>
+      {/*<YMInitializer accounts={[85867169]} />*/}
+      {/*<FacebookPixel />*/}
+      <CardProvider>
+        <MenuProvider>
+          <Menu />
+          <Header />
+          <AnimatePresence
+            initial="hidden" // Set the initial state to variants.hidden
+            animate="enter" // Animated state to variants.enter
+            exit="exit" // Exit state (used later) to variants.exit
+            transition={{ type: "linear" }}
+            // onExitComplete={() => window.scrollTo(0, 0)}
+            key={router.route}
+            variants={animation.page}
+          >
+            <Component {...pageProps} />
+          </AnimatePresence>
+          <Footer />
+        </MenuProvider>
+      </CardProvider>
+      <style jsx global>{`
         #nprogress {
           pointer-events: none;
         }
@@ -140,8 +134,8 @@ function MyApp({ Component, pageProps, router }) {
           }
         }
       `}</style>
-	</>
-	)
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
