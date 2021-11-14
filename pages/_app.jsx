@@ -14,7 +14,7 @@ import { animation } from '../animation/animation'
 
 import NProgress from "nprogress"
 import 'nprogress/nprogress.css'; //styles of nprogress
-import { YMInitializer } from 'react-yandex-metrika'
+// import { YMInitializer } from 'react-yandex-metrika'
 
 import 'swiper/swiper.scss'
 import '../public/styles/globals.css'
@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps, router }) {
 			<Head>
 				<title>Brand new order</title>
 			</Head>
-			<YMInitializer accounts={[85867169]} />
+			{/*<YMInitializer accounts={[85867169]} />*/}
 			<FacebookPixel />
 			<CardProvider>
 				<MenuProvider>
