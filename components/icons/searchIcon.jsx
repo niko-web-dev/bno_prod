@@ -1,7 +1,7 @@
-import {useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
 import s from '../cardForm/cardForm.module.scss'
-import {useRouter} from 'next/router'
 
 const SearchIcon = () => {
 	const [searchInput, setSearchInput] = useState('')

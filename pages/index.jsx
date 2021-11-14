@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import StartWindow from '../components/startWindow'
 import GallerySlider from '../components/gallerySlider'
+import StartWindow from '../components/startWindow'
 // import Details from '../components/details'
 
 const Home = ({ products }) => {

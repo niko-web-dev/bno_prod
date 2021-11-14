@@ -1,23 +1,24 @@
-import { useEffect } from "react"
-import Router from "next/router"
-
-import { MenuProvider } from '../context/contextMenu'
-import Menu from '../components/menu'
-import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
-
-import { CardProvider } from '../context/contextCard'
-
 import { AnimatePresence } from 'framer-motion'
-import { animation } from '../animation/animation'
-
+import Head from 'next/head'
+import Router from "next/router"
 import NProgress from "nprogress"
-import 'nprogress/nprogress.css'; //styles of nprogress
+import 'nprogress/nprogress.css' //styles of nprogress
+import { useEffect } from "react"
 import { YMInitializer } from 'react-yandex-metrika'
-
 import 'swiper/swiper.scss'
+import { animation } from '../animation/animation'
+import Footer from '../components/footer'
+import Header from '../components/header'
+import Menu from '../components/menu'
+import { CardProvider } from '../context/contextCard'
+import { MenuProvider } from '../context/contextMenu'
 import '../public/styles/globals.css'
+
+
+
+
+
+
 
 function FacebookPixel() {
 	useEffect(() => {
