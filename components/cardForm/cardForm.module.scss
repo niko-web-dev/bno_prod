@@ -1,160 +1,160 @@
 .cardForm {
-	display: flex;
-	flex-direction: column;
-	max-width: 360px;
-	width: 100%;
-	margin: 0 auto;
-	padding-top: 50px;
-	&__title {
-		font-family: Eurostile;
-		font-weight: 700;
-		font-size: 24px;
-		line-height: 29px;
-		letter-spacing: 0.15em;
-		margin-bottom: 50px;
-		width: 100%;
-		text-align: center;
-	}
-	&__inputBlock {
-		width: 100%;
-		height: 48px;
-		position: relative;
-		margin-bottom: 50px;
-	}
-	&__label {
-		position: absolute;
-		left: 34px;
-		top: -10px;
-		padding: 5px 15px;
-		background: #f1f1f1;
-		display: inline-block;
-		font-family: Eurostile;
-		font-weight: normal;
-		font-size: 12px;
-		line-height: 14px;
-		letter-spacing: 0.15em;
-		@media screen and (max-width: 951px) {
-			background: #ffffff;
-		}
-	}
-	&__input {
-		border: 1px solid #979797;
-		border-radius: 25px;
-		width: 100%;
-		height: 100%;
-		padding: 15px 50px;
-		font-family: Eurostile;
-		font-weight: 700;
-		font-size: 18px;
-		line-height: 22px;
-		letter-spacing: 0.15em;
-		background: transparent;
-		transition: all 0.5s ease;
-		outline: none;
-		&:focus,
-		&:hover {
-			border: 1px solid #000000;
-		}
-
-	}
-	&__callText {
-		margin-bottom: 40px;
-		font-family: Eurostile;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 12px;
-		line-height: 14px;
-		letter-spacing: 0.15em;
-		width: 100%;
-		text-align: center;
-	}
-	&__contacts {
-		display: flex;
-		margin-bottom: 120px;
-		&Label {
-			flex: 0 0 25%;
-			height: 40px;
-			cursor: pointer;
-			position: relative;
-			border-bottom: 1px solid #dadada;
-			transition: all 0.5s ease;
-			&Telegram {
-				background: url('../../public/static/images/card-icon-sprite.png') 242%
-					15%/491%;
-			}
-			&Whatsup {
-				background: url('../../public/static/images/card-icon-sprite.png') 269%
-					15%/491%;
-			}
-			&Phone {
-				background: url('../../public/static/images/card-icon-sprite.png') 296%
-					15%/491%;
-			}
-			&Mail {
-				background: url('../../public/static/images/card-icon-sprite.png') 323%
-					15%/491%;
-			}
-			&:hover,
-			&Active {
-				border-bottom: 1px solid #000000;
-				background-position-y: -70%;
-			}
-		}
-		&Radio {
-			width: 0;
-			height: 0;
-			background: transparent;
-		}
-	}
-	&__button {
-		background-color: transparent;
-		cursor: pointer;
-		padding: 15px;
-		text-align: center;
-		color: #000000;
-		font-family: Eurostile;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 12px;
-		line-height: 14px;
-		letter-spacing: 0.15em;
-		border: 1px solid #000000;
-		transition: all 0.5s ease;
-		&:hover {
-			background-color: #000;
-			color: #ffffff;
-		}
-	}
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+  &__title {
+    font-family: Eurostile;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.15em;
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+  }
+  &__inputBlock {
+    width: 100%;
+    height: 48px;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  &__label {
+    position: absolute;
+    left: 34px;
+    top: -10px;
+    padding: 5px 15px;
+    background: #f1f1f1;
+    display: inline-block;
+    font-family: Eurostile;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    @media screen and (max-width: 951px) {
+      background: #ffffff;
+    }
+  }
+  &__input {
+    border: 1px solid #979797;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    padding: 15px 50px;
+    font-family: Eurostile;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.15em;
+    background: transparent;
+    transition: all 0.5s ease;
+    outline: none;
+    &:focus,
+    &:hover {
+      border: 1px solid #000000;
+    }
+  }
+  &__callText {
+    margin-bottom: 40px;
+    font-family: Eurostile;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    width: 100%;
+    text-align: center;
+  }
+  &__contacts {
+    display: flex;
+    margin-bottom: 120px;
+    &Label {
+      flex: 0 0 25%;
+      height: 40px;
+      cursor: pointer;
+      position: relative;
+      border-bottom: 1px solid #dadada;
+      transition: all 0.5s ease;
+      &Telegram {
+        background: url("../../public/static/images/card-icon-sprite.png") 242%
+          15%/491%;
+      }
+      &Whatsup {
+        background: url("../../public/static/images/card-icon-sprite.png") 269%
+          15%/491%;
+      }
+      &Phone {
+        background: url("../../public/static/images/card-icon-sprite.png") 296%
+          15%/491%;
+      }
+      &Mail {
+        background: url("../../public/static/images/card-icon-sprite.png") 323%
+          15%/491%;
+      }
+      &:hover,
+      &Active {
+        border-bottom: 1px solid #000000;
+        background-position-y: -70%;
+      }
+    }
+    &Radio {
+      width: 0;
+      height: 0;
+      background: transparent;
+    }
+  }
+  &__button {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    color: #000000;
+    font-family: Eurostile;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    border: 1px solid #000000;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: #000;
+      color: #ffffff;
+    }
+  }
 }
 
 .search__icon {
-	margin-right: 35px;
-	@media (max-width: 420px) {
-		margin-right: 10px;
-
-	}
-	&_img {
-		z-index: 20;
-	}
-	&__svg {
-		position: absolute;
-		top: -12px;
-		z-index: 20;
-			@media (max-width: 375px) {
-				right: 10px;
-			}
-	}
+  margin-right: 35px;
+  @media (max-width: 420px) {
+    margin-right: 10px;
+  }
+  &_img {
+		transition: opacity .2s linear;
+    z-index: 20;
+  }
+  &__svg {
+    position: absolute;
+    transition: visibility 0.1s linear 0.2s, opacity 0.1s linear 0.2s;
+    top: 0px;
+		right: -10px;
+    z-index: 20;
+    @media (max-width: 375px) {
+      right: 10px;
+    }
+  }
 }
 .cardForm__input_search {
-	position: absolute;
-	top: -27px;
-	height: 50px;
-	right: -30px;
-	width: 250px;
-	z-index: 10;
-	background: #F1F1F1;
-	@media (max-width: 375px) {
-		right: -10px;
-
-	}
+  position: absolute;
+  top: -13px;
+  height: 50px;
+  right: -30px;
+  width: 250px;
+  z-index: 10;
+  background: #f1f1f1;
+  @media (max-width: 375px) {
+    right: -10px;
+  }
 }

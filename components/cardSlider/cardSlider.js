@@ -1,8 +1,8 @@
-import { FC, useRef, useState } from 'react'
-import s from './card-slider.module.scss'
 import Image from 'next/image'
-import SwiperCore, { Navigation, EffectFade, Pagination } from 'swiper'
+import { useRef } from 'react'
+import SwiperCore, { EffectFade, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import s from './card-slider.module.scss'
 
 SwiperCore.use([Navigation, EffectFade, Pagination])
 
@@ -48,7 +48,7 @@ const CardSlider = ({ images }) => {
 				pagination={pagination}
 				loop={false}
 				slidesPerView={1}
-                slidesPerGroup={1}
+        slidesPerGroup={1}
 				className={s.card__sliderWrapper}
 				onInit={(swiper) => {
 					swiper.params.navigation.prevEl = navigationPrevRef.current
