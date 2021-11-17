@@ -1,99 +1,151 @@
 @font-face {
-	font-family: Eurostile-Bold;
-	src: url('../../public/Eurostile-Bold.otf');
+  font-family: Eurostile-Bold;
+  src: url("../../public/Eurostile-Bold.otf");
 }
 
 .gallery {
-	&__title {
-		margin: 35px auto 50px;
-		text-align: center;
-		text-transform: uppercase;
-		font-size: 18px;
-		letter-spacing: 2px;
-	}
-	&__inner {
-		padding: 103px 0 108px 0;
-		display: flex;
-		justify-content: space-around;
-		@media (max-width: 420px) {
-			padding: 103px 0 70px 0;
-		}
-	}
-	&__pagination__prev {
-		position: absolute;
-		left: -40px;
-		top: 50%;
-		width: 50px;
-		height: 50px;
-		background: none;
-		border: none;
-		cursor: pointer;
-		z-index: 50;
-		img {
-			transform: rotate(-90deg);
-		}
-	}
-	&__pagination__next {
-		position: absolute;
-		right: -40px;
-		top: 50%;
-		width: 50px;
-		height: 50px;
-		background: none;
-		border: none;
-		cursor: pointer;
-		z-index: 50;
-		img {
-			transform: rotate(90deg);
-		}
-	}
-	//&__card {
-	//  position: relative;
-	//  border-radius: 30px;
-	//  transition: all .5s ease;
-	//  cursor: pointer;
-	//  background-repeat: no-repeat;
-	//  background-position: 75% 50%;
-	//  &:hover {
-	//    box-shadow: 1px 1px 17px 1px rgba(0, 0, 0, 0.3);
-	//  }
-	//  width: 380px;
-	//  height: 360px;
-	//  &_brandImg {
-	//    position: absolute;
-	//    top: 12px;
-	//    left: 12px;
-	//    z-index: 50;
-	//  }
-	//  &_title {
-	//    max-width: 121px;
-	//    z-index: 50;
-	//    position: absolute;
-	//    left: 11%;
-	//    top: 50%;
-	//    transform: translate(-50%, -50%) rotate(-90deg);
-	//    font-weight: 700;
-	//    letter-spacing: 1px;
-	//    font-size: 12px;
-	//
-	//    span {
-	//      font-family: 'Eurostile-Regular', serif;
-	//      font-weight: 400;
-	//    }
-	//  }
-	//  &_img {
-	//
-	//  }
-	//  &_price {
-	//    position: absolute;
-	//    bottom: 20px;
-	//    left: 50%;
-	//    transform: translateX(-50%);
-	//    font-size: 18px;
-	//    font-family: 'Eurostile-Bold', serif;
-	//    span {
-	//      padding-left: 14px;
-	//    }
-	//  }
-	//}
+  padding: 50px 0;
+
+  @media (max-width: 769px) {
+    padding: 40px 0;
+  }
+
+  @media (max-width: 479px) {
+    padding: 30px 0;
+  }
+
+  &__title {
+    margin: 0px 0px 50px 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+
+    @media (max-width: 992px) {
+      margin: 0px 0px 40px 0px;
+    }
+
+    @media (max-width: 769px) {
+      margin: 0px 0px 30px 0px;
+    }
+
+    @media (max-width: 479px) {
+      margin: 0px 0px 25px 0px;
+    }
+  }
+  &__inner {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    @media (max-width: 769px) {
+      padding: 20px 0;
+    }
+  }
+  &__pagination__prev {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 50;
+    img {
+      transform: rotate(-90deg);
+    }
+
+    @media (max-width: 1470px) {
+      left: 0px;
+    }
+
+    @media (max-width: 479px) {
+			left: -10px;
+    }
+  }
+  &__pagination__next {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 50;
+    img {
+      transform: rotate(90deg);
+    }
+
+    @media (max-width: 1470px) {
+      right: 0;
+    }
+
+    @media (max-width: 479px) {
+      right: -10px;
+    }
+  }
+
+  &__content {
+    min-width: 0;
+  }
+
+  &__slider {
+    @media (max-width: 1470px) {
+      max-width: 90%;
+    }
+
+    & > div {
+      padding: 10px 0;
+    }
+  }
+  //&__card {
+  //  position: relative;
+  //  border-radius: 30px;
+  //  transition: all .5s ease;
+  //  cursor: pointer;
+  //  background-repeat: no-repeat;
+  //  background-position: 75% 50%;
+  //  &:hover {
+  //    box-shadow: 1px 1px 17px 1px rgba(0, 0, 0, 0.3);
+  //  }
+  //  width: 380px;
+  //  height: 360px;
+  //  &_brandImg {
+  //    position: absolute;
+  //    top: 12px;
+  //    left: 12px;
+  //    z-index: 50;
+  //  }
+  //  &_title {
+  //    max-width: 121px;
+  //    z-index: 50;
+  //    position: absolute;
+  //    left: 11%;
+  //    top: 50%;
+  //    transform: translate(-50%, -50%) rotate(-90deg);
+  //    font-weight: 700;
+  //    letter-spacing: 1px;
+  //    font-size: 12px;
+  //
+  //    span {
+  //      font-family: 'Eurostile-Regular', serif;
+  //      font-weight: 400;
+  //    }
+  //  }
+  //  &_img {
+  //
+  //  }
+  //  &_price {
+  //    position: absolute;
+  //    bottom: 20px;
+  //    left: 50%;
+  //    transform: translateX(-50%);
+  //    font-size: 18px;
+  //    font-family: 'Eurostile-Bold', serif;
+  //    span {
+  //      padding-left: 14px;
+  //    }
+  //  }
+  //}
 }

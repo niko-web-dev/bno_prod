@@ -1,13 +1,11 @@
-import { FC, useContext } from 'react'
-import Image from 'next/image'
-
-import s from './pagination.module.scss'
 import cn from 'classnames'
-
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useContext } from 'react'
 import { animation } from '../../animation/animation'
-import { changeSlideCount } from '../../utils/utils'
 import { ContextAnimation } from '../../context/contextAnimation'
+import { changeSlideCount } from '../../utils/utils'
+import s from './pagination.module.scss'
 
 const Pagination = ({
 						slide,
@@ -52,17 +50,18 @@ const Pagination = ({
 					/>
 				</motion.div>
 
-				<div className={s.pagination__count}>
+				<button type="button" className={s.pagination__count}>
 					<motion.div
 						// transition={{ ease: [0.4, 0.4, 0.4, 0.4] }}
 						animate={!slideAnim ? 'norm' : 'scale'}
 						variants={animation.scaleAnim}
 						style={{ opacity: withCount ? 1 : 0 }}
+						className={s.pagination__count_inner}
 					>
 						<span> 0 {slide} /</span>
 						<span className={s.count__opacity}> 0 {slideCount} </span>
 					</motion.div>
-				</div>
+				</button>
 				<motion.div
 					className={s.pagination__next}
 					transition={{ ease: [0.17, 0.67, 0.53, 0.37] }}

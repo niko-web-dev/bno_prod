@@ -1,13 +1,8 @@
 .header {
 	&__logo {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-40%);
-
 		@media (max-width: 375px) {
 			width:80px;
-			height: 80x;
+			height: 80px;
 		}
 	}
 }

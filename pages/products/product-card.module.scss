@@ -1,55 +1,55 @@
 @font-face {
-	font-family: Eurostile-Bold;
-	src: url('../../public/Eurostile-Bold.otf');
+  font-family: Eurostile-Bold;
+  src: url("../../public/Eurostile-Bold.otf");
 }
 
 .product {
-	&__card {
-		position: relative;
-		border-radius: 30px;
-		transition: all 0.5s ease;
-		cursor: pointer;
-		background-repeat: no-repeat;
-		background-position: 75% 50%;
-		&:hover {
-			box-shadow: 1px 1px 17px 1px rgba(0, 0, 0, 0.3);
-		}
-		width: 380px;
-		height: 360px;
-		&_brandImg {
-			position: absolute;
-			top: 12px;
-			left: 12px;
-			z-index: 50;
-		}
-		&_title {
-			max-width: 121px;
-			z-index: 50;
-			position: absolute;
-			left: 11%;
-			top: 50%;
-			transform: translate(-50%, -50%) rotate(-90deg);
-			font-weight: 700;
-			letter-spacing: 1px;
-			font-size: 12px;
+  &__card {
+    position: relative;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 75% 50%;
+    &:hover {
+      box-shadow: 1px 1px 17px 1px rgba(0, 0, 0, 0.3);
+    }
+    width: 380px;
+    height: 360px;
+    &_brandImg {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 50;
+    }
+    &_title {
+      max-width: 121px;
+      z-index: 50;
+      position: absolute;
+      left: 11%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 12px;
 
-			span {
-				font-family: 'Eurostile-Regular', serif;
-				font-weight: 400;
-			}
-		}
-		&_img {
-		}
-		&_price {
-			position: absolute;
-			bottom: 20px;
-			left: 50%;
-			transform: translateX(-50%);
-			font-size: 18px;
-			font-family: 'Eurostile-Bold', serif;
-			span {
-				padding-left: 14px;
-			}
-		}
-	}
+      span {
+        font-family: "Eurostile-Regular", serif;
+        font-weight: 400;
+      }
+    }
+    &_img {
+    }
+    &_price {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      font-family: "Eurostile-Bold", serif;
+      span {
+        padding-left: 14px;
+      }
+    }
+  }
 }

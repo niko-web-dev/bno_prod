@@ -1,39 +1,27 @@
-import { useContext } from 'react'
-import { contextMenu } from '../../context/contextMenu'
-import Image from 'next/image'
+import Image from "next/image";
+import s from "../header/header.module.scss";
+import { useContext } from "react";
+import { contextMenu } from "../../context/contextMenu";
 
 const MenuBtn = () => {
-	const [toggleMenu, setToggleMenu] = useContext(contextMenu)
+  const [toggleMenu, setToggleMenu] = useContext(contextMenu);
 
-	function handleMenu() {
-		setToggleMenu(!toggleMenu)
-	}
+  function handleMenu() {
+    setToggleMenu(!toggleMenu);
+  }
 
-	return (
-		<div className="menu__btn">
-			<Image
-				width={50}
-				height={50}
-				className="menu_img"
-				src="/static/images/menu.png"
-				alt="menu"
-				onClick={handleMenu}
-			/>
+  return (
+    <button type="button" className={s.menu__btn}>
+      <Image
+        width={50}
+        height={50}
+        className={s.menu__img}
+        src="/static/images/menu.png"
+        alt="menu"
+        onClick={handleMenu}
+      />
+    </button>
+  );
+};
 
-			<style jsx>{`
-				.menu__btn {
-					position: absolute;
-					top: 50%;
-					left: 0;
-					transform: translateY(15px);
-				}
-				.menu_img {
-					cursor: pointer;
-					
-				}
-			`}</style>
-		</div>
-	)
-}
-
-export default MenuBtn
+export default MenuBtn;
