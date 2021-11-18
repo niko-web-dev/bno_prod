@@ -61,6 +61,7 @@ const MainSlider = () => {
                   height={762}
                   alt="brand"
                   layout="intrinsic"
+                  className={s.slide__man_img}
                 />
               </div>
               <div
@@ -153,6 +154,7 @@ const MainSlider = () => {
                   width={494}
                   height={770}
                   alt="brand"
+                  className={s.slide__man_two_img}
                 />
               </div>
               <div
