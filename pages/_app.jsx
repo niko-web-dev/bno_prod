@@ -13,23 +13,23 @@ import { CardProvider } from "../context/contextCard";
 import { MenuProvider } from "../context/contextMenu";
 import "../public/styles/globals.css";
 
-// import { YMInitializer } from 'react-yandex-metrika'
+import { YMInitializer } from 'react-yandex-metrika'
 
-// function FacebookPixel() {
-// 	useEffect(() => {
-// 		import("react-facebook-pixel")
-// 			.then((x) => x.default)
-// 			.then((ReactPixel) => {
-// 				ReactPixel.init('1367957313598585');
-// 				ReactPixel.pageView();
-//
-// 				Router.events.on("routeChangeComplete", () => {
-// 					ReactPixel.pageView();
-// 				});
-// 			});
-// 	});
-// 	return null;
-// }
+function FacebookPixel() {
+	useEffect(() => {
+		import("react-facebook-pixel")
+			.then((x) => x.default)
+			.then((ReactPixel) => {
+				ReactPixel.init('1367957313598585');
+				ReactPixel.pageView();
+
+				Router.events.on("routeChangeComplete", () => {
+					ReactPixel.pageView();
+				});
+			});
+	});
+	return null;
+}
 
 function MyApp({ Component, pageProps, router }) {
   useEffect(() => {
@@ -46,8 +46,8 @@ function MyApp({ Component, pageProps, router }) {
       <Head>
         <title>Brand new order</title>
       </Head>
-      {/*<YMInitializer accounts={[85867169]} />*/}
-      {/*<FacebookPixel />*/}
+      <YMInitializer accounts={[85867169]} />
+      <FacebookPixel />
       <CardProvider>
         <MenuProvider>
           <Menu />
