@@ -181,83 +181,83 @@ const Products  = ({ products }) => {
 					</div>
 					<h2 className={s.gallery__buttonText}>фильтр</h2>
 				</button>
-				<div className={s.gallery__wrapper}>
-					{actualProduct !== null ? (
-						actualProduct
-							?.slice(
-								0,
-								currentPage === lastPages
-									? actualProduct.length + 1
-									: currentPage * 8 + 1
-							)
-							?.map((product, index) => {
-								return (
-									<Link href={`/products/${product.id}`} key={index} scroll={false}>
-										<a className={s.gallery__item}>
-											<h2 className={s.gallery__itemTitle}>
-												{product.code} <b>{product.title}</b>
-											</h2>
-											<div className={s.gallery__itemInfo}>
-												<Image
-													className={s.gallery__itemImage}
-													src={product?.main_image?.src}
-													width={500}
-													height={500}
-													alt={product.title}
-												/>
-												<p className={s.gallery__itemPrice}>
-													<b>{Number(product.price).toLocaleString()}</b> ₽
-												</p>
-											</div>
-											<div className={s.gallery__itemHelp}>
-												<div className={s.gallery__itemSizes}>
-													{product.sizes.map((item, index) => {
-														return <p key={index}>{item}</p>
-													})}
-												</div>
-												<div
-													className={s.gallery__itemColor}
-													style={{ background: product.color }}
-												></div>
-											</div>
-										</a>
-									</Link>
-								)
-							})
-					) : (
-						<h2>Товары не найдены</h2>
-					)}
-
-					{currentPage === lastPages ? null : (
-						<div className={s.gallery__buttonPagesWrapper}>
-							<button
-								className={s.gallery__buttonPages}
-								onClick={() => setCurrentPage(currentPage + 1)}
-							>
-								<svg
-									width="8"
-									height="76"
-									viewBox="0 0 8 76"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M3.64644 75.3536C3.84171 75.5488 4.15829 75.5488 4.35355 75.3536L7.53553 72.1716C7.73079 71.9763 7.73079 71.6597 7.53553 71.4645C7.34027 71.2692 7.02369 71.2692 6.82842 71.4645L4 74.2929L1.17157 71.4645C0.976308 71.2692 0.659725 71.2692 0.464463 71.4645C0.269201 71.6597 0.269201 71.9763 0.464463 72.1716L3.64644 75.3536ZM3.5 -2.18557e-08L3.5 75L4.5 75L4.5 2.18557e-08L3.5 -2.18557e-08Z"
-										fill="black"
-									/>
-								</svg>
-								<span>показать больше</span>
-							</button>
-						</div>
-					)}
-				</div>
-				<CategoryFilter
-					products={products}
-					closeAside={closeAside}
-					updateFilter={updateFilter}
-					filterActive={filterActive}
-					defaultParams={defaultParams}
-				/>
+			{/*	<div className={s.gallery__wrapper}>*/}
+			{/*		{actualProduct !== null ? (*/}
+			{/*			actualProduct*/}
+			{/*				?.slice(*/}
+			{/*					0,*/}
+			{/*					currentPage === lastPages*/}
+			{/*						? actualProduct.length + 1*/}
+			{/*						: currentPage * 8 + 1*/}
+			{/*				)*/}
+			{/*				?.map((product, index) => {*/}
+			{/*					return (*/}
+			{/*						<Link href={`/products/${product.id}`} key={index} scroll={false}>*/}
+			{/*							<a className={s.gallery__item}>*/}
+			{/*								<h2 className={s.gallery__itemTitle}>*/}
+			{/*									{product.code} <b>{product.title}</b>*/}
+			{/*								</h2>*/}
+			{/*								<div className={s.gallery__itemInfo}>*/}
+			{/*									<Image*/}
+			{/*										className={s.gallery__itemImage}*/}
+			{/*										src={product?.main_image?.src}*/}
+			{/*										width={500}*/}
+			{/*										height={500}*/}
+			{/*										alt={product.title}*/}
+			{/*									/>*/}
+			{/*									<p className={s.gallery__itemPrice}>*/}
+			{/*										<b>{Number(product.price).toLocaleString()}</b> ₽*/}
+			{/*									</p>*/}
+			{/*								</div>*/}
+			{/*								<div className={s.gallery__itemHelp}>*/}
+			{/*									<div className={s.gallery__itemSizes}>*/}
+			{/*										{product.sizes.map((item, index) => {*/}
+			{/*											return <p key={index}>{item}</p>*/}
+			{/*										})}*/}
+			{/*									</div>*/}
+			{/*									<div*/}
+			{/*										className={s.gallery__itemColor}*/}
+			{/*										style={{ background: product.color }}*/}
+			{/*									></div>*/}
+			{/*								</div>*/}
+			{/*							</a>*/}
+			{/*						</Link>*/}
+			{/*					)*/}
+			{/*				})*/}
+			{/*		) : (*/}
+			{/*			<h2>Товары не найдены</h2>*/}
+			{/*		)}*/}
+			
+			{/*		{currentPage === lastPages ? null : (*/}
+			{/*			<div className={s.gallery__buttonPagesWrapper}>*/}
+			{/*				<button*/}
+			{/*					className={s.gallery__buttonPages}*/}
+			{/*					onClick={() => setCurrentPage(currentPage + 1)}*/}
+			{/*				>*/}
+			{/*					<svg*/}
+			{/*						width="8"*/}
+			{/*						height="76"*/}
+			{/*						viewBox="0 0 8 76"*/}
+			{/*						fill="none"*/}
+			{/*						xmlns="http://www.w3.org/2000/svg"*/}
+			{/*					>*/}
+			{/*						<path*/}
+			{/*							d="M3.64644 75.3536C3.84171 75.5488 4.15829 75.5488 4.35355 75.3536L7.53553 72.1716C7.73079 71.9763 7.73079 71.6597 7.53553 71.4645C7.34027 71.2692 7.02369 71.2692 6.82842 71.4645L4 74.2929L1.17157 71.4645C0.976308 71.2692 0.659725 71.2692 0.464463 71.4645C0.269201 71.6597 0.269201 71.9763 0.464463 72.1716L3.64644 75.3536ZM3.5 -2.18557e-08L3.5 75L4.5 75L4.5 2.18557e-08L3.5 -2.18557e-08Z"*/}
+			{/*							fill="black"*/}
+			{/*						/>*/}
+			{/*					</svg>*/}
+			{/*					<span>показать больше</span>*/}
+			{/*				</button>*/}
+			{/*			</div>*/}
+			{/*		)}*/}
+			{/*	</div>*/}
+			{/*	<CategoryFilter*/}
+			{/*		products={products}*/}
+			{/*		closeAside={closeAside}*/}
+			{/*		updateFilter={updateFilter}*/}
+			{/*		filterActive={filterActive}*/}
+			{/*		defaultParams={defaultParams}*/}
+			{/*	/>*/}
 			</div>
 		</div>
 	)
@@ -272,7 +272,7 @@ export async function getServerSideProps({ query }) {
 
 		return { props: { products } }
 	}catch (e) {
-		console.log(e)
+		return console.log(e)
 	}
 
 }

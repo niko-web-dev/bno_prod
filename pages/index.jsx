@@ -20,12 +20,12 @@ const Home = ({ products }) => {
 export async function getServerSideProps() {
 
 	try {
-		const res = await fetch(`http://wp.brandneworder.ru/wp-json/wp/v2/products/`)
+		const res = await fetch(`https://brandneworder.ru/wp-json/wp/v2/products/`)
 		const products = await res.json()
 
 		return { props: { products } }
 	} catch (e) {
-		console.log(e)
+		return console.log(e)
 	}
 
 }

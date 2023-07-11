@@ -11,7 +11,6 @@ import Image from 'next/image'
 const GallerySlider = ({ products }) => {
 	const navigationPrevRef1 = useRef(null)
 	const navigationNextRef1 = useRef(null)
-
 	return (
 		<div className={s.__slider}>
 			<div className="container">

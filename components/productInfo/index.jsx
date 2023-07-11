@@ -3,6 +3,7 @@ import s from '../../pages/products/product-page.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ContextCard } from '../../context/contextCard'
+import logo from "../logo/logo";
 // import Popup from '../popup/index'
 
 const ProductInfo = ({ product }) => {
@@ -11,13 +12,13 @@ const ProductInfo = ({ product }) => {
 	const [matherialPopup, setMatherialPopup] = useState(false)
 	const [cardLs, setCardLs] = useContext(ContextCard)
 	const [activePopup, setPopUp] = useState(false)
-
+	console.log("product", product)
 	useEffect(() => {
 		let allColors = []
 		{
 			let activeColor = {
 				id: product.id,
-				color: product.colors_variant[0].value,
+				color: product.colors_varian && product.colors_variant[0].value,
 			}
 			allColors.push(activeColor)
 			for (let item in product.related_posts) {
@@ -31,7 +32,6 @@ const ProductInfo = ({ product }) => {
 		allColors.sort((a, b) => (a.id > b.id ? 1 : -1))
 		setColors(allColors)
 	}, [product])
-
 	const handleSizes = (event) => {
 		event.preventDefault()
 		setSize(event.target.value)
@@ -135,8 +135,9 @@ const ProductInfo = ({ product }) => {
 						<b>УХОД </b>
 					</h1>
 					<ul className={s.card__save_blockListMat}>
-						{product?.care?.map((item, index) => {
-							if (item.icon) {
+						{product.care && [1].map((item, index) => {
+							console.log(product.care, "product.care")
+							if (item.care) {
 								return (
 									<li key={index}>
 										<Image
@@ -145,8 +146,7 @@ const ProductInfo = ({ product }) => {
 											layout={'fixed'}
 											width={35}
 											height={35}
-											objectFit="contain"
-										/>
+											objectFit="contain"/>
 										<p>{item.text}</p>
 									</li>
 								)
@@ -159,7 +159,7 @@ const ProductInfo = ({ product }) => {
 				{product.code} <b>{product.title}</b>
 			</h1>
 			<div className={s.card__description}>
-				{product.description.split('<br />').map((str, index) => (
+				{product.description && product.description.split('<br />').map((str, index) => (
 					<p key={index}>{str}</p>
 				))}
 			</div>
@@ -176,7 +176,9 @@ const ProductInfo = ({ product }) => {
 			<h2 className={s.card__colorTitle}>Доступные цвета</h2>
 			<div className={s.card__colors}>
 				{colors.length > 1
-					? colors.map(({ id, color }) => {
+					? colors.map(({ id, color}, arr) => {
+						console.log(id,  "id")
+						console.log(arr,  "arr")
 							return (
 								<Link href={`/products/${id}`} key={id} scroll={false}>
 									<a
@@ -203,13 +205,13 @@ const ProductInfo = ({ product }) => {
 									].join(' ')}
 									key={index}
 								>
-									{item}
+									{item.size}
 									<input
 										className={s.card__sizesRadio}
 										onClick={handleSizes}
 										type="radio"
 										name="sizes"
-										value={item}
+										value={item.size}
 									/>
 								</label>
 							)
@@ -217,7 +219,7 @@ const ProductInfo = ({ product }) => {
 					: 'One size'}
 			</div>
 			<h2 className={s.card__price}>
-				<b>{product.price.toLocaleString()}</b> ₽
+				<b>{product.price && product.price.toLocaleString()}</b> ₽
 			</h2>
 			{chechProductInCard(product.id) ? (
 				<Link href={'/Card'} scroll={false}>

@@ -31,7 +31,7 @@ export const SliderMotion = ({ gallery }) => {
 			{slideSrc.map((img, index) => {
 				return (
 					<div key={index} className={s.card__slide}>
-						<Image src={img} height={600} width={362} alt="image" />
+						{/*<Image src={img} height={600} width={362} alt="image" />*/}
 					</div>
 				)
 			})}

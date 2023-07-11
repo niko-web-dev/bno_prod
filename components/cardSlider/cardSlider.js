@@ -9,7 +9,6 @@ SwiperCore.use([Navigation, EffectFade, Pagination])
 const CardSlider = ({ images }) => {
 	const navigationPrevRef = useRef(null)
 	const navigationNextRef = useRef(null)
-
 	const pagination = {
 		clickable: false,
 		el: `.${s.card__sliderPagLine}`,
@@ -56,11 +55,11 @@ const CardSlider = ({ images }) => {
 					swiper.navigation.update()
 				}}
 			>
-				{images.map((img, index) => {
+				{images && images.map((img, index) => {
 					return (
 						<SwiperSlide key={index} className={s.card__slide}>
 							<Image
-								src={img?.src}
+								src={img.src}
 								alt="Picture of the author"
 								layout="fill"
 								className={s.card__slideImg}

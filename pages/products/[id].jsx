@@ -7,6 +7,7 @@ import CardSlider from '../../components/cardSlider/cardSlider'
 import Head from "next/head"
 
 const ProductPage= ({ product }) => {
+	
 	return (
 		<>
 			<Head>
@@ -24,8 +25,8 @@ const ProductPage= ({ product }) => {
 			</h1>
 					<div className={s.card__content}>
 						<Index
-							brand={[product.brands[0].name, product.brands[0].slug]}
-							types={[[product.categories[0].name, product.categories[0].slug], [product.categories[product.categories.length - 1].name, product.categories[product.categories.length - 1].slug]]}
+							brand={[product.brands[0] && product.brands[0], product.brands[0] && product.brands[0].slug]}
+							types={[[product.categories[0] && product.categories[0], product.categories[0] && product.categories[0]], [product.categories[product.categories.length - 1] && product.categories[product.categories.length - 1].name, product.categories[product.categories.length - 1].slug]]}
 						/>
 						<CardSlider images={product.gallery} />
 					</div>
@@ -41,13 +42,13 @@ export async function getServerSideProps(ctx) {
 	const { id } = ctx.query
 	try {
 		const res = await fetch(
-			`http://wp.brandneworder.ru/wp-json/wp/v2/products/${id}`
+			`https://brandneworder.ru/wp-json/wp/v2/products/${id}`
 		)
 		const product = await res.json()
 
 		return { props: { product } }
 	} catch (e) {
-		console.log(e)
+		return console.log(e)
 	}
 
 }

@@ -16,7 +16,7 @@ const CardItem = (product) => {
 				alt="brand"
 			/>
 			<div className={style.cardProduct__info}>
-				<h2 className={style.cardProduct__title}>{product?.brands[0]?.name}</h2>
+				<h2 className={style.cardProduct__title}>{product?.brands[0] && product?.brands[0]?.name}</h2>
 				<p className={style.cardProduct__article}>
 					<span>{product.code}</span> {product.title}
 				</p>

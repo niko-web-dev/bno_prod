@@ -31,7 +31,7 @@ const CategoryFilter = ({
 		color: false,
 		size: false,
 	}
-
+	
 	products?.map((product) => {
 		color.push({
 			name: product?.colors_variant ? product?.colors_variant[0].label : 'Все цвета',
@@ -100,7 +100,7 @@ const CategoryFilter = ({
 	function addSearchItems(slug){
 		updateFilter(filters, slug)
 	}
-
+	
 	const params =
 		typeof window !== 'undefined' ? defaultParams : undefined
 
@@ -219,38 +219,38 @@ const CategoryFilter = ({
 						<h2>ТИП ОДЕЖДЫ</h2>
 					</button>
 					<div className={style.filter__blockItems}>
-						{type?.map((item, index) => {
-							return (
-								<button
-									key={index}
-									onClick={() => addFilter(item.slug, 'type')}
-									className={[
-										style.filter__blockItem,
-										filters?.type?.indexOf(item.slug) > -1
-											? style.filter__blockItemActive
-											: null,
-									].join(' ')}
-								>
-									<div className={style.filter__blockItemCheck}>
-										<svg
-											width="16"
-											height="12"
-											viewBox="0 0 16 12"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												fillRule="evenodd"
-												clipRule="evenodd"
-												d="M5.86338 11.9999C5.58738 11.9999 5.32338 11.8859 5.13438 11.6849L0.271382 6.50587C-0.107618 6.10387 -0.086618 5.47087 0.315382 5.09287C0.718382 4.71487 1.35138 4.73487 1.72838 5.13687L5.85338 9.52787L14.2614 0.325869C14.6354 -0.0831314 15.2674 -0.110131 15.6754 0.261869C16.0824 0.633869 16.1104 1.26687 15.7384 1.67387L6.60138 11.6739C6.41438 11.8799 6.14838 11.9979 5.87038 11.9999H5.86338Z"
-												fill="#231F20"
-											/>
-										</svg>
-									</div>
-									<h2>{item.name}</h2>
-								</button>
-							)
-						})}
+						{/*{type?.map((item, index) => {*/}
+						{/*	return (*/}
+						{/*		<button*/}
+						{/*			key={index}*/}
+						{/*			onClick={() => addFilter(item.slug, 'type')}*/}
+						{/*			className={[*/}
+						{/*				style.filter__blockItem,*/}
+						{/*				filters?.type?.indexOf(item.slug) > -1*/}
+						{/*					? style.filter__blockItemActive*/}
+						{/*					: null,*/}
+						{/*			].join(' ')}*/}
+						{/*		>*/}
+						{/*			<div className={style.filter__blockItemCheck}>*/}
+						{/*				<svg*/}
+						{/*					width="16"*/}
+						{/*					height="12"*/}
+						{/*					viewBox="0 0 16 12"*/}
+						{/*					fill="none"*/}
+						{/*					xmlns="http://www.w3.org/2000/svg"*/}
+						{/*				>*/}
+						{/*					<path*/}
+						{/*						fillRule="evenodd"*/}
+						{/*						clipRule="evenodd"*/}
+						{/*						d="M5.86338 11.9999C5.58738 11.9999 5.32338 11.8859 5.13438 11.6849L0.271382 6.50587C-0.107618 6.10387 -0.086618 5.47087 0.315382 5.09287C0.718382 4.71487 1.35138 4.73487 1.72838 5.13687L5.85338 9.52787L14.2614 0.325869C14.6354 -0.0831314 15.2674 -0.110131 15.6754 0.261869C16.0824 0.633869 16.1104 1.26687 15.7384 1.67387L6.60138 11.6739C6.41438 11.8799 6.14838 11.9979 5.87038 11.9999H5.86338Z"*/}
+						{/*						fill="#231F20"*/}
+						{/*					/>*/}
+						{/*				</svg>*/}
+						{/*			</div>*/}
+						{/*			<h2>{item.name}</h2>*/}
+						{/*		</button>*/}
+						{/*	)*/}
+						{/*})}*/}
 					</div>
 				</div>
 				<div
@@ -325,7 +325,7 @@ const CategoryFilter = ({
 							return (
 								<button
 									key={index}
-									onClick={() => addFilter(item.slug, 'size')}
+									onClick={() => addFilter(item.slug.size.slug, 'size')}
 									className={[
 										style.filter__blockItem,
 										filters?.size?.indexOf(item.slug) > -1
@@ -349,7 +349,7 @@ const CategoryFilter = ({
 											/>
 										</svg>
 									</div>
-									<h2>{item.name}</h2>
+									<h2>{item.name.size}</h2>
 								</button>
 							)
 						})}

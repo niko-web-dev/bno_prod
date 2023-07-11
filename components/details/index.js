@@ -29,8 +29,10 @@ const Details = () => {
 						<div className={s.details__card} key={index}>
 							<div className={s.details__card__icon}>
 								<Image
-									width={24}
-									height={24}
+									width={500}
+									height={500}
+									// layout='fill'
+									// objectFit='contain'
 									src={detailsCard?.img}
 									alt="shield"
 								/>

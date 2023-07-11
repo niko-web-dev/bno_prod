@@ -11,7 +11,7 @@ const MenuBrands = () => {
 
 	useEffect(() => {
 		try {
-			fetch(`http://wp.brandneworder.ru/wp-json/wp/v2/brands/`)
+			fetch(`https://brandneworder.ru/wp-json/wp/v2/brands/`)
 				.then((res) => res.json())
 				.then((res) => setBrands(res))
 		}catch (e) {
@@ -41,7 +41,7 @@ const MenuBrands = () => {
 									className={s.wrapper__image}
 
 								/>
-								{/*<h2>{item.title}</h2>*/}
+								<h2>{item.title}</h2>
 							</a>
 						</Link>
 					)

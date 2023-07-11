@@ -85,7 +85,7 @@ const Footer = () => {
 					</div>
 					<div className={s.footer__social}>
 
-						<Link href={`https://instagram.com/brandneworder.store?utm_medium=copy_link`} t scroll={false}>
+						<Link href='https://instagram.com/brandneworder.store?utm_medium=copy_link' scroll={false}>
 							<a  target="_blank" className={s.footer__socialLink_insta}></a>
 						</Link>
 						<Link href={`/share`} scroll={false}>

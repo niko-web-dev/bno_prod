@@ -7,12 +7,15 @@ import CategoryFilter from '../../components/categoryFilter/index.js'
 import { useRouter } from 'next/router'
 
 const Products = ({ products }) => {
+	console.log("products", products)
 	const [actualProduct, setActualProduct] = useState(products)
 	const [filterActive, setFilterActive] = useState(false)
 	const [defaultParams, setDefaultParams] = useState({})
+	
 	const [lastPages, setLastPages] = useState(
 		Math.ceil((products.length + 1) / 9)
 	)
+	
 	const [currentPage, setCurrentPage] = useState(1)
 	const router = useRouter()
 	let newDef
@@ -187,13 +190,13 @@ const Products = ({ products }) => {
 										fill="white"
 									/>
 								</mask>
-								{/*<g*/}
-								{/*	mask={[filterActive ? 'url(#mask0)' : 'url(#mask1)'].join('')}*/}
-								{/*>*/}
-								{/*	<g id="&#240;&#159;&#142;&#168; Color">*/}
-								{/*		<rect id="Base" width="24" height="24" fill="#0D1C2E" />*/}
-								{/*	</g>*/}
-								{/*</g>*/}
+								<g
+									mask={[filterActive ? 'url(#mask0)' : 'url(#mask1)'].join('')}
+								>
+									<g id="&#240;&#159;&#142;&#168; Color">
+										<rect id="Base" width="24" height="24" fill="#0D1C2E" />
+									</g>
+								</g>
 							</g>
 						</svg>
 					</div>
@@ -218,9 +221,9 @@ const Products = ({ products }) => {
 											<div className={s.gallery__itemInfo}>
 												<Image
 													className={s.gallery__itemImage}
-													src={product?.main_image?.src}
-													width={500}
-													height={500}
+													src={product.main_image ? product.main_image.src : ''}
+													layout='fill'
+													objectFit='contain'
 													alt={product.title}
 												/>
 												<p className={s.gallery__itemPrice}>
@@ -230,12 +233,12 @@ const Products = ({ products }) => {
 											<div className={s.gallery__itemHelp}>
 												<div className={s.gallery__itemSizes}>
 													{product.sizes.map((item, index) => {
-														return <p key={index}>{item}</p>
+														return <p key={index}>{item.size}</p>
 													})}
 												</div>
 												<div
 													className={s.gallery__itemColor}
-													style={{ background: product.color }}
+													style={{ background: product && product.colors.color }}
 												></div>
 											</div>
 										</a>
@@ -245,7 +248,7 @@ const Products = ({ products }) => {
 					) : (
 						<h2>Товары не найдены</h2>
 					)}
-
+				
 					{currentPage === lastPages ? null : (
 						<div className={s.gallery__buttonPagesWrapper}>
 							<button
@@ -284,17 +287,17 @@ const Products = ({ products }) => {
 
 // http://wp.brandneworder.ru/wp-json/wp/v2/products
 export async function getServerSideProps({ query }) {
-	console.log(query)
+	// console.log(query)
 	try {
-		const res = await fetch(`http://wp.brandneworder.ru/wp-json/wp/v2/products?posts_per_page=100`)
+		const res = await fetch(`https://brandneworder.ru/wp-json/wp/v2/products?posts_per_page=100`)
 
+		// const products = await res.json()
 		const products = await res.json()
 
-		return { props: { products } }
-	}catch (e) {
-		console.log(e)
+		return { props: {products} }
+	} catch (e) {
+		return console.log(e)
 	}
 
 }
-
 export default Products

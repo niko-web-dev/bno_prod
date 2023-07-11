@@ -12,9 +12,10 @@ const ProductCard = ({ product }) => {
 				<div className={s.gallery__itemInfo}>
 					<Image
 						className={s.gallery__itemImage}
-						src={product?.main_image?.src}
-						width={500}
-						height={500}
+						src={product.main_image? product.main_image.src : ''}
+						layout='fill'
+						objectFit='contain'
+						
 						alt={product?.title}
 					/>
 					<p className={s.gallery__itemPrice}>
@@ -23,8 +24,8 @@ const ProductCard = ({ product }) => {
 				</div>
 				<div className={s.gallery__itemHelp}>
 					<div className={s.gallery__itemSizes}>
-						{product?.sizes.map((item, index) => {
-							return <p key={index}>{item}</p>
+						{product.sizes && product.sizes.map((item, index) => {
+							return <p key={index}>{item.size}</p>
 						})}
 					</div>
 					<div
