@@ -58,12 +58,12 @@ const CardSlider = ({ images }) => {
 				{images && images.map((img, index) => {
 					return (
 						<SwiperSlide key={index} className={s.card__slide}>
-							<Image
-								src={img.src}
-								alt="Picture of the author"
-								layout="fill"
-								className={s.card__slideImg}
-							/>
+							{/*<Image*/}
+							{/*	src={img.src}*/}
+							{/*	alt="Picture of the author"*/}
+							{/*	layout="fill"*/}
+							{/*	className={s.card__slideImg}*/}
+							{/*/>*/}
 						</SwiperSlide>
 					)
 				})}

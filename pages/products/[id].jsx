@@ -42,7 +42,7 @@ export async function getServerSideProps(ctx) {
 	const { id } = ctx.query
 	try {
 		const res = await fetch(
-			`https://brandneworder.ru/wp-json/wp/v2/products/${id}`
+			`https://wp.brandneworder.ru/wp-json/wp/v2/products/${id}`
 		)
 		const product = await res.json()
 

@@ -22,7 +22,7 @@ const Popup = ({activePopup, hidePopUp}) => {
 							return (<div key={item.id} className={s.productItem}>
 
 								<div className={s.wrapImg}>
-									<img src={item.image} alt=""/>
+									{/*<img src={item.image} alt=""/>*/}
 								</div>
 								<div className={s.wrapText}>
 									<p className={s.wrapText__brand}>{item?.brands?.name}</p>

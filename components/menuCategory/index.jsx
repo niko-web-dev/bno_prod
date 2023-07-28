@@ -13,7 +13,7 @@ const MenuCategory = (brand) => {
 
 		try {
 			const res = await fetch(
-				`https://brandneworder.ru/wp-json/wp/v2/${endpoint}/`
+				`https://wp.brandneworder.ru/wp-json/wp/v2/${endpoint}/`
 			)
 			const result = await res.json()
 			return result

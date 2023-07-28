@@ -8,13 +8,13 @@ const CardItem = (product) => {
 	const deleteItem = () => alert('delete: ' + product.id)
 	return (
 		<div className={style.cardProduct__item}>
-			<Image
-				className={style.cardProduct__image}
-				src={product.image}
-				width={245}
-				height={300}
-				alt="brand"
-			/>
+			{/*<Image*/}
+			{/*	className={style.cardProduct__image}*/}
+			{/*	src={product.image}*/}
+			{/*	width={245}*/}
+			{/*	height={300}*/}
+			{/*	alt="brand"*/}
+			{/*/>*/}
 			<div className={style.cardProduct__info}>
 				<h2 className={style.cardProduct__title}>{product?.brands[0] && product?.brands[0]?.name}</h2>
 				<p className={style.cardProduct__article}>

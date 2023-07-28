@@ -11,7 +11,7 @@ const MenuBrands = () => {
 
 	useEffect(() => {
 		try {
-			fetch(`https://brandneworder.ru/wp-json/wp/v2/brands/`)
+			fetch(`https://wp.brandneworder.ru/wp-json/wp/v2/brands/`)
 				.then((res) => res.json())
 				.then((res) => setBrands(res))
 		}catch (e) {
@@ -33,14 +33,14 @@ const MenuBrands = () => {
 
 						>
 							<a className={s.wrapper__item} onClick={() => setToggleMenu(false)} >
-								<Image
-									width={300}
-									height={400}
-									src={item?.logo_image?.src}
-									alt={'bnand'}
-									className={s.wrapper__image}
-
-								/>
+								{/*<Image*/}
+								{/*	width={300}*/}
+								{/*	height={400}*/}
+								{/*	src={item?.logo_image?.src}*/}
+								{/*	alt={'bnand'}*/}
+								{/*	className={s.wrapper__image}*/}
+								
+								{/*/>*/}
 								<h2>{item.title}</h2>
 							</a>
 						</Link>

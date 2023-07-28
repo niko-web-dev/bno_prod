@@ -219,13 +219,13 @@ const Products = ({ products }) => {
 												{product.code} <b>{product.title}</b>
 											</h2>
 											<div className={s.gallery__itemInfo}>
-												<Image
-													className={s.gallery__itemImage}
-													src={product.main_image ? product.main_image.src : ''}
-													layout='fill'
-													objectFit='contain'
-													alt={product.title}
-												/>
+												{/*<Image*/}
+												{/*	className={s.gallery__itemImage}*/}
+												{/*	src={product.main_image ? product.main_image.src : ''}*/}
+												{/*	layout='fill'*/}
+												{/*	objectFit='contain'*/}
+												{/*	alt={product.title}*/}
+												{/*/>*/}
 												<p className={s.gallery__itemPrice}>
 													<b>{Number(product.price).toLocaleString()}</b> ₽
 												</p>
@@ -289,7 +289,7 @@ const Products = ({ products }) => {
 export async function getServerSideProps({ query }) {
 	// console.log(query)
 	try {
-		const res = await fetch(`https://brandneworder.ru/wp-json/wp/v2/products?posts_per_page=100`)
+		const res = await fetch(`https://wp.brandneworder.ru/wp-json/wp/v2/products?posts_per_page=100`)
 
 		// const products = await res.json()
 		const products = await res.json()

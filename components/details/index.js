@@ -28,14 +28,14 @@ const Details = () => {
 					return (
 						<div className={s.details__card} key={index}>
 							<div className={s.details__card__icon}>
-								<Image
-									width={500}
-									height={500}
-									// layout='fill'
-									// objectFit='contain'
-									src={detailsCard?.img}
-									alt="shield"
-								/>
+								{/*<Image*/}
+								{/*	width={500}*/}
+								{/*	height={500}*/}
+								{/*	// layout='fill'*/}
+								{/*	// objectFit='contain'*/}
+								{/*	src={detailsCard?.img}*/}
+								{/*	alt="shield"*/}
+								{/*/>*/}
 							</div>
 							<h2>{detailsCard.title}</h2>
 							<p>{detailsCard.text}</p>

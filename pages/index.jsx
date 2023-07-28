@@ -20,7 +20,7 @@ const Home = ({ products }) => {
 export async function getServerSideProps() {
 
 	try {
-		const res = await fetch(`https://brandneworder.ru/wp-json/wp/v2/products/`)
+		const res = await fetch(`https://wp.brandneworder.ru/wp-json/wp/v2/products/`)
 		const products = await res.json()
 
 		return { props: { products } }

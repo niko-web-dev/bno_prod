@@ -3,6 +3,7 @@ import s from './products.module.scss'
 import Image from 'next/image'
 
 const ProductCard = ({ product }) => {
+	console.log("product", product)
 	return (
 		<Link href={`/products/${product?.id}`} scroll={false}>
 			<a className={s.gallery__item}>
@@ -10,14 +11,14 @@ const ProductCard = ({ product }) => {
 					{product?.code} <b>{product?.title}</b>
 				</h2>
 				<div className={s.gallery__itemInfo}>
-					<Image
-						className={s.gallery__itemImage}
-						src={product.main_image? product.main_image.src : ''}
-						layout='fill'
-						objectFit='contain'
-						
-						alt={product?.title}
-					/>
+					{/*<Image*/}
+					{/*	className={s.gallery__itemImage}*/}
+					{/*	src={product.main_image? product.main_image.src : ''}*/}
+					{/*	layout='fill'*/}
+					{/*	objectFit='contain'*/}
+					{/*	*/}
+					{/*	alt={product?.title}*/}
+					{/*/>*/}
 					<p className={s.gallery__itemPrice}>
 						<b>{Number(product?.price).toLocaleString()}</b> ₽
 					</p>
